@@ -1,0 +1,978 @@
+sustainability
+Review
+Impact of Climate Change on Agriculture and Its Mitigation
+Strategies: A Review
+Gurdeep Singh Malhi1, Manpreet Kaur2and Prashant Kaushik3,4,*
+/gid00030/gid00035/gid00032/gid00030/gid00038/gid00001/gid00033/gid00042/gid00045 /gid00001
+/gid00048/gid00043/gid00031/gid00028/gid00047/gid00032/gid00046
+Citation: Malhi, G.S.; Kaur, M.;
+Kaushik, P . Impact of Climate Change
+on Agriculture and Its Mitigation
+Strategies: A Review. Sustainability
+2021 ,13, 1318. https://doi.org/
+10.3390/su13031318
+Academic Editor: Jun-Ichi Sakagami
+Received: 26 December 2020
+Accepted: 22 January 2021
+Published: 27 January 2021
+Publisher’s Note: MDPI stays neutral
+with regard to jurisdictional claims in
+published maps and institutional afﬁl-
+iations.
+Copyright: © 2021 by the authors.
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article
+distributed under the terms and
+conditions of the Creative Commons
+Attribution (CC BY) license (https://
+creativecommons.org/licenses/by/
+4.0/).1Department of Agronomy, Punjab Agricultural University, Ludhiana 141004, Punjab, India;
+89gurdeep.malhi@gmail.com
+2Department of Agricultural Economics, CCS Haryana Agricultural University, Hisar 125004, Haryana, India;
+mkaur2515@gmail.com
+3Instituto de Conservaci ón y Mejora de la Agrodiversidad Valenciana, Universitat Polit ècnica de Val ència,
+46022 Valencia, Spain
+4Nagano University, 1088 Komaki, Ueda, Nagano 386-0031, Japan
+*Correspondence: prakau@doctor.upv.es; Tel.: +34-963-877-000
+Abstract: Climate change is a global threat to the food and nutritional security of the world. As
+greenhouse-gas emissions in the atmosphere are increasing, the temperature is also rising due to
+the greenhouse effect. The average global temperature is increasing continuously and is predicted
+to rise by 2C until 2100, which would cause substantial economic losses at the global level. The
+concentration of CO 2, which accounts for a major proportion of greenhouse gases, is increasing
+at an alarming rate, and has led to higher growth and plant productivity due to increased photo-
+synthesis, but increased temperature offsets this effect as it leads to increased crop respiration rate
+and evapotranspiration, higher pest infestation, a shift in weed ﬂora, and reduced crop duration.
+Climate change also affects the microbial population and their enzymatic activities in soil. This paper
+reviews the information collected through the literature regarding the issue of climate change, its
+possible causes, its projection in the near future, its impact on the agriculture sector as an inﬂuence
+on physiological and metabolic activities of plants, and its potential and reported implications for
+growth and plant productivity, pest infestation, and mitigation strategies and their economic impact.
+Keywords: climate change; climate-smart agriculture; diseases; economics; pest; weeds
+1. Introduction
+Climate change is one of the biggest challenges to the world in present times. It
+is deﬁned as signiﬁcant changes in the average values of meteorological elements, such
+as precipitation and temperature, for which averages have been computed over a long
+period [ 1]. The past few decades indicate that signiﬁcant changes in climate at a global
+level were the result of enhanced human activities that altered the composition of the
+global atmosphere [ 2]. The concentration of greenhouses gases such as methane (CH 4),
+carbon dioxide (CO 2), and nitrous oxide (N 2O) have been increased by 150%, 40% and 20%,
+respectively since 1750 [ 3]. Carbon dioxide emissions, which account for the maximum
+proportion of greenhouse gases [ 4], rose to 36.14 billion metric tons in 2014 from 22.15 billion
+metric tons in 1990 [ 5]. The average global temperature has increased at an average rate of
+0.15–0.20C per decade since 1975 [ 6], and is expected to increase by 1.4–5.8C by 2021 [ 7].
+Greenhouse gas (GHG) emissions, particularly CO 2from the combustion of fossil fuels and
+non-CO 2GHGs such as nitrous oxide, methane, and CFCs add to global warming. The
+CO 2concentration in the atmosphere had increased to 411.43 ppm in 2019 from 315.98 ppm
+in 1959, as shown in Figure 1 [ 8]. CO 2constitutes a major proportion of greenhouse gases
+in the atmosphere: 65% from fossil fuels and industrial processes and 11% from forestry
+and other land use, followed by methane (16%), nitrous oxide (6%), and ﬂuorinated gases
+(2%) [ 3]. Before 1750, CO 2emissions from fossil fuels was negligible, but it increased
+Sustainability 2021 ,13, 1318. https://doi.org/10.3390/su13031318 https://www.mdpi.com/journal/sustainability
+Sustainability 2021 ,13, 1318 2 of 21
+rapidly with industrialization. Figure 2 shows the increase in CO 2emissions over the
+years (1850–2020). The world has emitted around 1.5 trillion metric tons of CO 2since 1751.
+However, there are regional variations in the emission. Europe is the largest contributor
+of CO 2having around 514 billion metric tons of CO 2emissions, followed by Asia and the
+North American continent, which have recorded cumulative CO 2emissions of 457 billion
+metric tons each. The USA is the largest contributor to CO 2emissions (399 billion metric
+tons), and has contributed 25% of total historical emissions since 1751, followed by China
+(200 billion metric tons). The European Union (EU-28), a union of 28 countries that sets
+collaborative targets, has contributed 22% of historical emissions of CO 2. Africa contributes
+only 3% of global cumulative CO 2emissions due to low per-capita emissions. However,
+countries like Brazil and India, whose historical emission is less, signiﬁcantly add to the
+total emissions in the current context [ 9]. With an increased level of CO 2in the atmosphere,
+the fertilization of crops is increased along with decreased energy requirements due to
+warming. These are certain positive impacts of climate change, whereas water resources
+are negatively impacted due to climate change. In the 20th century, the impact of climate
+change was mainly positive. Most countries were beneﬁtted until 1980, after which the
+trend remained the same for the developed world, while the Third-World countries were
+negatively impacted. In the 21st century, climate change will become a severe problem,
+and both rich and developing countries will face negative externalities [10].
+Figure 1. The increase in CO 2concentration in the atmosphere (source: [8]).
+Figure 2. CO 2emission in the atmosphere over the years (1850–2020) (Source: [11]).
+Sustainability 2021 ,13, 1318 3 of 21
+The rise in greenhouse gases has implications for the rising temperature of the atmo-
+sphere. These infrared active gases, mainly carbon dioxide (CO 2), ozone (O 3), and water
+vapor (H 2O), absorb the thermal radiations emitted by the atmosphere and the surface of
+the earth, which in turns warms the earth. This phenomenon is known as the greenhouse
+effect. The average global temperature anomaly is shown in Figure 3, and illustrates a
+signiﬁcant increase in the global temperature compared to the average temperature of the
+base period (1901–2000). The global average temperature has been increased in the range
+of 1–1.2C since 1850. Still, since the temperature changes in landmasses are much more
+prominent, the global land temperature has increased around twice that of the oceans.
+The temperature of land across the world has risen by 1.32 0.04C compared to the
+1951–1980 average, while the increase was 0.59 0.06C for the ocean surface temperature
+(excluding areas of sea ice). Moreover, since the Northern Hemisphere constitutes the
+larger portion of landmasses, it has shown a higher average temperature than the Southern
+Hemisphere. The temperature of the Northern Hemisphere and the Southern Hemisphere
+has risen 1.31C and 0.91C, respectively, with a global average of 1.11C since 1850. The
+extreme rise in temperature has been observed in the polar regions, and has detrimental
+effects, like glacial melting [ 12]. As the global temperature is rising, there is a need to
+reduce greenhouse-gas emissions to limit the temperature increase of 2C relative to
+pre-industrialization. The developed countries have around a 60–80% contribution to the
+global temperature rise, sea-ice reduction, and upper-ocean warming, compared to 20–40%
+for developing countries, since 2005 [ 13]. The average global temperature is expected to
+rise by 2C by 2100 and 4.2C by 2400, as predicted by probabilistic computations of
+the IPCC’s range of climate sensitivity. However, surpassing 2C by 2100 at the present
+radiative-force level does not seem likely to happen. But the risk is increasing, mainly due
+to the stabilizing of radiative forces above 400 ppm of CO 2. Moreover, it is exceptionally
+unlikely that the temperature will rise by 2C if anthropogenic emissions were ceased
+tomorrow [14].
+Figure 3. Global land and ocean temperature anomalies over the base period (1901–2000) (source: [15]).
+Climate change is projected to worsen in the upcoming future. In the Punjab province
+of Pakistan, there have been projections of increased minimum and maximum temperature
+in the Kharif and rabi seasons. In Kharif season, the average maximum temperature and
+average minimum temperature is predicted to rise by 1–3.3C and 2–3C; while in rabi,
+it is projected to increase by 2.1–3.5C and 2–3C, respectively, in simulations done for
+Sustainability 2021 ,13, 1318 4 of 21
+the future mid-century (2040–2069). There have also been projections of variations in
+the regions’ rainfall, more emphatically during the Kharif season (25–35%); while in the
+rabi season, the variations are minimal [ 16]. The temperature minimums and maximums
+are also projected to rise in Punjab, India by the middle and end of the 21st century, as
+estimated by PRECIS (Providing Regional Climates for Impact Studies). Moreover, extreme
+incidences of high temperature (heat waves) during March to June and low temperatures
+during December and January (frost) are also predicted [ 17] The extremes in weather
+parameters, mainly minimum temperature, maximum temperature, and precipitation,
+are also projected to be observed more frequently, with higher intensity in China, with
+additional warming of 0.5C. Moreover, if global warming is kept below 1.5C, the
+weather extremes will be lowered [18].
+The global precipitation anomalies over the base period (1901–2000) are shown in
+the Figure 4, which shows that the precipitation change is showing a positive trend, but
+these vary according to the region. There was an absolute change of 0.78 inches in precipi-
+tation across the world from 1901 to 2015 [ 11]. However, temperature and precipitation
+extremes are more likely to be witnessed in the near future due to global warming. Extreme
+precipitation phenomena, either heavy rainfall or drought, are dependent on a region’s
+geography. Increased average river ﬂows due to prolonged heavy rainfall are more likely
+to be observed in South and East Asia, while the drought in southern Africa and South
+America will be less severe. The rainfall pattern of the Indus river basin is projected to
+show uneven variations spatially and seasonally. Precipitation is predicted to rise in the
+upper Indus basin, while the same has been projected to decrease in the lower basin.
+Moreover, the upper basin is also projected to face increased warming than the lower
+basin [ 19]. There is a probability of more warm extremes, lesser cold extremes, and more
+strengthened precipitation extremes in the future period in the northeastern United States.
+Higher emissions will intensify these changes [ 20]. The increased intensity and frequency
+of precipitation also impacts soil erosion, and will have more adverse consequences in
+northeast China if greenhouse-gas emissions increase [ 21]. Precipitation anomalies have
+detrimental effects on agriculture, mainly in developing nations. Apart from affecting
+crop yields, it signiﬁcantly inﬂuences cropland areas. There is evidence suggesting that
+the approximately 9% rate of cropland expansion in the developing world over the last
+two decades is due to dry anomalies as farmers expand the area to compensate for yield
+losses [ 22]. Global warming will pose a severe threat to the world’s food security, but if it
+is limited to 1.5C, the 76% developing countries’ vulnerability will be reduced compared
+with the same regions at 2C [23]. Ensuring food for the world’s population in the face of
+climate change is not an easy task, owing to its huge impact on agriculture production [ 24].
+There must be an annual increase in the world’s agricultural production by 60% from
+2005/2007 to 2050, comprising a rise of 77% in developing and 24% in developed countries,
+to fulﬁll the food and nutritional requirements of the population by 2050 [ 25]. Climate
+change is known to have an adverse effect on agricultural production, and is projected to
+reduce the global cereal production of maize and wheat by 3.8% and 5.5%, respectively [ 26].
+Because of climatic factors, plants have to face several abiotic stresses such as salinity,
+drought, heat stress, cold stress, etc. [ 27]. Shortage of water availability, soil fertility loss,
+and pest infestations in crops are the signiﬁcant undesirable impacts of climate change [ 28].
+This review is an attempt to consolidate the studies related to the impact of climate change
+on crop yields, associated weed infestations, and economic consequences for 1998–2020.
+Moreover, mitigation and adaptation strategies to combat climate change are also discussed
+to reach a clear understanding of their possible signiﬁcance.
+Sustainability 2021 ,13, 1318 5 of 21
+Figure 4. Global precipitation anomalies over the base period (1901–2000) (source: [11]).
+2. Materials and Methods
+A systematic review of the literature was done through PRISMA (Preferred Reporting
+Items for Systematic Meta-Analysis), as shown in Figure 5 [ 29,30]. The studies related to
+the research goals were searched on Google Scholar using the following keywords: climate
+and agriculture; mitigation and climate change; climate change and economics; mitigation
+and economics. Moreover, the search was performed for the years 1998–2020. A total of
+410 documents were screened, out of which 200 papers were found to be relevant. Research
+papers published in journals having an impact factor were ﬁnally selected, and their results
+are reported here.
+Figure 5. Method for selection of research papers for review and analysis.
+3. Causes of Climate Change
+Temperature changes are caused by natural phenomena and anthropogenic activities
+on earth, which ultimately initiates the concentration of GHGs [ 31]. Anthropogenic activi-
+ties lead to the emission of greenhouse gas such as CO 2, methane, and nitrous oxide, as
+well as other substances that lead to ozone depletion in the atmosphere [ 32]. The increased
+CO 2concentration in the atmosphere can affect microbial activities in the soil, along with
+implications on water content, and therefore increased atmospheric CO 2(463–780 ppm) can
+stimulate nitrous oxide and methane emission from upland soil and wetlands, respectively,
+which nulliﬁes the 16.6% mitigation effect of climate change as predicted by increasing ter-
+Sustainability 2021 ,13, 1318 6 of 21
+restrial carbon sink [ 33]. The agriculture sector contributes 15% of total emissions, primarily
+methane and nitrous oxide. The global emission of non-agricultural greenhouse gases
+is predicted to rise until 2055 if the dietary preferences and consumption of food energy
+are kept constant at 1995 levels. However, with changing preferences toward high-value
+foods such as milk and meat, the emissions are predicted to rise at an even higher rate.
+The emission can be reduced either with technological mitigation or by reduced meat
+consumption, or both [ 34]. The livestock sector is the main contributor to greenhouse-gas
+emissions, and according to the IPCC, it generates around 8–10.8% of emissions; however,
+it can contribute up to 18% of GHG emissions based on lifecycle analysis [ 35]. The main
+sources of greenhouse-gas emissions by the livestock sectors include enteric fermentation,
+N2O emissions, liming, fossil fuels, organic farming, and fertilizer production [ 36]. The
+use of nitrogenous chemical fertilizers also leads to greenhouse-gas emissions [ 37]. With
+better management of crop production, N fertilizer use can be lowered by 38%. Better crop
+management also leads to consumption of 11% less input energy with 33% increased yields,
+leading to a reduction in greenhouse-gas emissions by 20% [38].
+4. Climate Change and Agriculture
+Agriculture is the most vulnerable sector to climate change, owing to its huge size
+and sensitivity to weather parameters, thereby causing huge economic impacts [ 39]. The
+changes in climatic events such as temperature and rainfall signiﬁcantly affect the yield
+of crops. The effect of rising temperatures, precipitation variation, and CO 2fertilization
+varies according to the crop, location, and magnitude of change in the parameters. The
+temperature increase is found to reduce the yield, while the precipitation increase is
+likely to offset or reduce the impact of increasing temperature [ 40]. As inﬂuenced by
+climatic variables when witnessed in Iran, crop productivity depends on adaptation abilities
+and crop type, climate scenario, and CO 2fertilization effect [ 41]. The net revenue of
+farmers is found to decrease signiﬁcantly with a decrease in precipitation or increase in
+temperature in Cameroon. This factor and poor policy-making have led to low demand
+for Cameroon’s agricultural exports, thereby causing ﬂuctuations in national income [ 42].
+Statistical evidence shows the temperature affects coffee yield in Veracruz, Mexico. It was
+also found that coffee production may not remain economically viable for the producers in
+the coming years, as there is an indication of a 34% reduction in current production [ 43].
+The effect of climate change on the crop yields vary according to the area and irrigation
+application. Crop yields can be increased by expanding irrigated areas, which can have a
+detrimental effect on the environment [ 44]. The rise in temperature is likely to reduce the
+yield of many crops by reducing their duration [ 45]. The aggregate production of wheat,
+rice, and maize is expected to decrease if both the temperate and tropical regions experience
+a warming of 2C [46]. Climate change in general has more impact on tropical regions,
+as tropical crops remain closer to their high-temperature optima, and thereby experience
+high-temperature stress during elevated levels of temperature.
+Moreover, insect pests and diseases are more prevalent in humid and warmer re-
+gions [ 47]. Other parameters such as humidity and wind speed, along with temperature
+and rainfall, also impact crop yields, and in the absence of these parameters, there has
+been a chance of over-prediction of the cost of climate change. Moreover, it was found
+that climate change is likely to reduce the yields of wheat, corn, and rice in China by
+18.2612.13 ,45.1011.55 , and 36.25 10.75% until 2100 [ 48]. Extreme weather events
+have become more frequent since the 1900s in the Netherlands, and have signiﬁcantly
+affected the wheat yield in the Dutch region. The week in which an extreme weather
+event occurred determined the extent of yield reduction in wheat [ 49]. There has been a
+projection of higher droughts in the near future due to climate change in most of the regions
+of the world, and an increase of drought-affected area from 15.4 to 44.0% is projected by
+2100. Africa is cited as the most vulnerable area. The yield of major crops in drought areas
+is expected to be reduced by more than 50% by 2050 and by almost 90% by 2100 [50].
+Sustainability 2021 ,13, 1318 7 of 21
+The loss of crop yields can increase food prices, and can have an absurd effect on
+agriculture welfare globally, with a 0.3% annual loss of future GDP globally by 2100 [ 51].
+However, [ 52] found that climate change has limited inﬂuence on the world food sup-
+ply, but the developing countries will face severe negative consequences. In India, the
+temperature is predicted rise between 2.33C and 4.78C along with a doubling of CO 2
+concentration and longevity of heat waves, which could have a detrimental effect on the
+agriculture sector [ 53]. In the arid region of Rawalpindi, Pakistan, an annual loss of INR
+4180/acre is to be borne by farmers by 2100 with a 1C increase in temperature, while the
+net revenue can be increased by INR 377.4 and INR 649.21 with an increase in rainfall of 8%
+and 14%, respectively [ 54]. The yield losses in three cereal grains (rice, maize, and wheat)
+are projected to worsen by 10 to 25% with a 1C increase in mean surface temperature
+globally [ 55]. In sub-Saharan Africa, the average crop yield is projected to be reduced
+by 6–24% due to climate change [ 56]. The total ﬁsh demand in Solomon Island is also
+projected to exceed the production in 2050, which will have serious implications for food
+security, as per-capita consumption will be reduced [57].
+Plant–water relations are highly susceptible to changes in temperature and precipi-
+tation, and physiological changes are more likely to be impacted by extreme changes in
+these parameters than by changes in mean climate [ 58]. Plants’ response to climate change
+varies according to the plant species and developmental stage of the plant. There are
+species-speciﬁc thresholds for different plants, and their responses, such as elongation of
+roots, disturbance in growth angle of roots, and reduction in yield, vary among different
+species of plants [ 59]. With increased CO 2content in the atmosphere, reduced transpiration
+was found in plants, leading to an increase in air temperature of 0.420.02 K . This indi-
+rect physiological effect of raised CO 2and a direct radiative effect can increase warming
+of land surfaces by 3.33 0.03 K [ 60]. With a rising CO 2level in the atmosphere, the
+harvestable produce of crops are expected to increase, and the developmental changes in
+plants depend upon the type of crops. C 3crops are expected to produce more, however,
+the water requirements of both C 3and C 4crops are expected to be lowered in the absence
+of stressful conditions. But these beneﬁcial impacts of raised CO 2are likely to be offset by
+elevated temperatures and altered precipitations [61].
+However, a positive impact of climate change on agriculture production is also ob-
+served in some areas. But these regional changes, whether increases or decreases, would
+not result in massive changes, and these changes will be more prominent in some low
+latitudes only. However, if the temperature is increased beyond that equivalent to doubled
+CO 2, this can cause substantial economic losses [ 62]. The detrimental impact of climate
+change will be enormous in developing countries’ tropical regions, but it will largely
+depend on the region’s climate scenario. The drier region of Sri Lanka (north and east)
+will experience huge losses in agriculture compared to the cooler central highland region,
+the output of which is expected to remain the same or even increase with rising temper-
+atures [ 63]. The pace of climate change determines its impact, thereby determining the
+cost of adjustment, so environmental policies must be dynamic and implemented with
+adaptation and ﬂexibility [64].
+A sensitivity analysis using CERES (crop estimation through resources and environ-
+mental synthesis) has also shown that wheat and rice yields in northwest India have the
+potential to increase by 28% and 15%, respectively, at double the levels of CO 2; however,
+the increased thermal stress due to elevated level of temperatures associated with high
+CO 2nearly cancels out the positive impact. Moreover, there will be an increased yield in
+both rice and wheat by 21% and 4%, respectively, if the irrigation scheduling followed at
+present is practiced even under the combined effect of enhanced CO 2and thermal stress.
+But in case of acute water shortage along with thermal stress, the yield of rice and wheat
+is projected to decline even under the positive inﬂuence of raised CO 2in the future [ 65].
+The increased CO 2concentration has the potential to offset the losses in the crop yields
+due to rising temperatures and reduced soil moisture [ 66]. The raised CO 2concentration
+considerably reduces the global yield losses by mainly decreasing agricultural consump-
+Sustainability 2021 ,13, 1318 8 of 21
+tive water use (4–17%). Moreover, the crop yields’ regional differences are mostly due to
+different crops’ growing environments [ 67]. The concentration of nutrients (N, Fe, Zn, and
+S) mainly found in proteins is reduced in non-leguminous C 3crops with an elevated level
+of CO 2[68]. At the increased level of CO 2, enhanced vegetative and reproductive growth
+and enhanced seed yield are observed in rice crops at an ambient air temperature of 29C;
+however, with increased temperature, the seed set was decreased [69].
+At an elevated level of CO 2, the zinc and iron content of C 3grain crops and legumes
+are decreasing, which has detrimental effects on human health. C 3plants and legumes’
+protein concentration is also observed to be lowered, while C 4plants are unaffected by
+a raised CO 2level [ 70]. The changes in climate also impact the microbial population
+present in the soil, and their enzymatic activities. When assessed from a temperature-
+gradient tunnel with a 4–5C higher temperature, the microbial population was found
+to be signiﬁcantly higher than in ﬁeld conditions. The population of nitrogen-ﬁxing and
+P-solubilizers bacteria and fungus, as well as enzymatic activities, were signiﬁcantly higher
+under a wide range of temperatures, but the highest parameters were found on or near
+the optimum temperature [ 71]. In contrast, the growth of endophytic fungus and plant-
+growth-promoting bacteria has a positive, negative, or neutral impact, depending on the
+temperature range [ 72]. The impact of climate change on various crops’ productivity as
+estimated through various models is shown in Table 1.
+Sustainability 2021 ,13, 1318 9 of 21
+Table 1. Impact of climate change on crop productivity.
+Crops Yield Variation Cause Model Used Location Source
+Corn, soybean, cottonYield increase up to 29–32C
+ 30–46% by 2100
+ 63–82% by 2100Slowest warming scenario
+Rapid warming scenarioHadley III model United States of America [73]
+Cotton, sunﬂower, wheat  2–9% by 2050 Medium-high and low GHG emissions DAYCENT California’s Central Valley [74]
+Wheat  6%
+Each degree Celsius increase in
+world’s mean temperatureGlobal grid-based, local
+point-based, statistical regression
+and ﬁeld warming experimentsMultiple sites of the world [75]Rice  3.5%
+Maize  7.4%
+Soybean  3.1% by 2100
+Rainfed corn  23–34% by 2055Increasing temperature and
+precipitation variabilityProbability-based approach Central Illinois [76]
+Wheat  2.1%
+Increasing annual temperatureMultimethod analysis with
+statistical regressionEastern and
+northern Europe
+[77]Barley  9.1%
+Maize  24.5%
+Maize  5.8%Sub-Saharan AfricaSugarcane  3.9%
+Drought-tolerant sorghum
+Cassava+0.7%
++1.7%Sub-Saharan Africa
+Wheat  9% Oceania
+Rice  3.7% 1C increase in mean growing
+season temperatureRegression, Kendall-tau statistic,
+Pearson correlationChina [78]Wheat  10.2%
+Maize
+Wheat 10–22%
+ 5–13% if occurred later in season
+ 5–17% and  2–18% if occurred
+early in seasonIncreased frequencies of extreme
+weather events and warmingSALUS crop model Northern Midwest USA [79]
+Sorghum  2.2%
+Increasing temperatureCounty-speciﬁc multiple linear
+regression modelGreat Plains of USA [80] Soybean  0.5%
+Maize +1.6%
+Sustainability 2021 ,13, 1318 10 of 21
+Projected changes in climate are most likely to affect the development and survival
+of pathogens [ 81]. The change in climate or weather pattern of an area is predicted to
+increase a crop’s susceptibility to various pests, diseases, and weeds. Increased yields are
+projected in countries of high and mid-latitudes, while yields are projected to decrease at
+lower latitudes [ 82]. However, there are projections of a 10–25% increase in losses due to
+insect pest infestation with an increased temperature of one degree [ 83]. Climate change
+has the potential to increase the pest population and its migration, which can have an
+adverse impact on agricultural yields and even viability, as the pest population depends
+mainly on abiotic factors such as humidity and temperature. In Brazil, the infestation of
+coffee nematodes and leaf miners is expected to increase due to an increase in the number
+of generations in a month compared to the climatic conditions of 1961–1990 [ 84]. Pest
+infestation thereby has led to huge pesticides costs for pest management. There is statistical
+evidence that increased rainfall and temperatures increased the costs of pesticides for crops
+such as corn, potatoes, and soybean, in contrast to a reduction in wheat in the USA [ 85].
+The ratio of arable land affected by the European corn borer and the Colorado potato
+beetle is expected to increase by 43 and 48%, respectively, for the second generations in
+HadCM3-high 2050 scenario, and the unoccupied areas of high altitudes are also found
+vulnerable to these pests in the scenario of increasing temperature in Central Europe [ 86].
+In the current global-warming scenario, an expansion of the suitable areas for wheat aphid
+(Schizaphis graminum ) has been predicted to upper latitudes in northern hemisphere by
+2030 while in northern hemisphere, the area is predicted to contract [ 87]. The frequency
+of the insect outbreak of 30 pest species is also expected to rise. It is likely to affect new
+areas with the increasing temperature in Sweden and affect its forestry sector [ 88]. The
+future projection of the potato tuber moth ( Phthorimaea operculella ) when done through GIS
+modeling, reported an estimated increase in the pest’s damage potential in tropical and
+subtropical warmer regions, where the pest already prevails. It is also predicted to expand
+in temperate and mountainous regions, with a slightly increased damage potential [89].
+The life cycle of pathogens such as Puccinia striiformis f.sp. trictici is projected to be
+limited by increasing temperature, while an increase in the concentration of atmospheric
+CO 2is estimated to provide advantageous conditions for Fusarium pseudograminearum [90].
+Climate change impacts the geographical distribution and growth rate of populations, along
+with increasing the number of generations. Climate change can extend the development
+season of the pests and change the synchronization of crop and pest. It can also increase the
+risk of migrant pest invasion. The efﬁciency of plant protection measures such as host plant
+resistance, natural enemies, transgenic plants, synthetic chemicals, or biopesticides are also
+likely to be reduced due to climate change [ 91]. There could be unpredictable interactions
+of cropping systems, weather, and pests due to climate change and globalization [ 92].
+Climate change is likely to impact insects’ growth and their metabolic rates, particularly
+in temperate regions [ 55]. The region of suitability of pest infestation is also increasing
+because of climate change. The three common insect species of Africa, Tuta absoluta, Ceratitis
+cosyra , and Bactrocera invadens , have increasing habitat suitability across the entire continent,
+particularly in regions close to its most suitable habitat [93]. Moreover, the increased CO 2
+level and the rising temperature are increasing the threat of late blight of potato, blast, and
+sheath blight of rice, which could pose a serious threat to the world’s food security [94].
+Weed infestation of crops is also affected by climate change. C 3weeds respond more
+strongly to an increase in CO 2concentration, with increased leaf area and biomass. C 3
+weeds are a major problem in C 4plants, while C 4weeds in C 3plants become less competi-
+tive [ 95]. Weeds compete with crops for water and nutrients, as they have higher nutrient
+requirements than the crop plants [ 96]. Climate change also inﬂuences the dynamics of
+crop–weed competition. Apart from weed growth, climate change also signiﬁcantly inﬂu-
+ences herbicide efﬁcacy, as it affects the herbicidal mode of action [ 97]. Climate change is
+projected to have a favorable inﬂuence on the weeds of wheat crops, which are very vital
+to world food security [ 98]. In the wake of climate change, new geographical horizons are
+being opened up for weeds, and their management can only be possible if new manage-
+Sustainability 2021 ,13, 1318 11 of 21
+ment practices are being planned while considering climate change. Pest infestations of
+various crops is predicted to worsen with climate change, as warmer and humid conditions
+are more favorable to pest proliferation. However, it will vary from region to region and
+according to the pests’ adaptability to climate change.
+5. Mitigation and Adaptation to Climate Change
+Farmers’ perceptions of climate change’s threat and severity have the most impor-
+tant motivational factor in voluntary mitigation. However, the adaptation depends on
+the availability of related information [ 99]. Moreover, there will be a reduction in the
+number of people exposed to water stress with mitigation strategies, but the remaining
+people will need adaptation strategies due to their exposure to increased stress [ 100].
+The usage of traditional management systems and agroecological management systems,
+namely biodiversiﬁcation, soil management, and water harvesting, can help farmers adopt
+climate-resilient technologies [ 101]. These management practices ensure increased car-
+bon sequestration, increased soil health, increased soil quality and reduced soil erosion,
+leading to resilient soils and cropping systems, ultimately ensuring food security during
+climate change [ 102]. These educational interventions, which focus on local, tangible,
+and actionable aspects, and could be monitored by individual behavior, are the most
+successful in providing climate-change education for ecological development [ 103]. The
+farmers were basically in support of adaptations, but the GHG reduction is endorsed by
+only a few, which shows the need to focus on interventions having both the features of
+adaptation and mitigation [ 104,105]. The main adaptation methods of mitigation can be
+broadly classiﬁed into resource-conservation technologies, cropping-system technologies,
+and socio-economic or policy interventions [ 106]. Small and marginal farmers are not able
+to cope with climate change due to less awareness, which makes them more susceptible to
+losses [ 28]. The farmers of African countries are also very vulnerable to climate change due
+to ﬁnancial implications and lack of management strategies [ 93]. There have been ways to
+curb the impact of climate change by a number of agronomic practices, such as a shift in
+sowing dates. The optimum sowing dates for wheat have been identiﬁed as October 22–28
+in the northeastern part, October 24–30 in the central region, and October 21–27 in the
+southwestern region of Punjab, India [ 107]. The yield loss of the crops is lowest when the
+farmers have adopted sequential cropping systems in sub-Saharan Africa, and adjust the
+sowing dates according to climate [ 108]. The agroforestry sector can mitigate GHG accu-
+mulation in the atmosphere, and thus help small farmers of Kenya adapt to climate change.
+There are certain simple approaches to decreasing GHG emissions, such as alternate drying
+in rice, mid-season drainage, improved livestock diet, increasing N-use efﬁciency, and soil
+carbon. Simple adaptation strategies like changing planting dates and varieties have the
+potential to decrease the impact of climate change [ 109]. Diffusion of technology is very
+important in shaping the response of farmers to climate change. The main priority areas
+are market integration and support of public research and capacity-building [110].
+Conservation agriculture has the potential to reverse the degradation caused by con-
+ventional tillage over the years, as it leads to minimum soil disturbance, crop diversity, and
+maintenance of soil cover. Moreover, conservation agriculture leads to lower GHG emis-
+sions, reduced fertilizer use, and higher terrestrial carbon sequestration [ 111]. Minimum
+soil disturbance, crop rotation, and soil cover are the underlying principles of conservation
+agriculture that pave sustainable agriculture methods. In south Asia, farmers are adopting
+zero tillage for wheat cultivation primarily because of a 15–16% reduction in cultivation
+cost. Moreover, zero tillage leads to higher yields with lesser variability in wheat and
+maize [ 112]. No-till practices were also claimed as an alternative to conventional tillage,
+which mitigates the impact of climate change through carbon sequestration; however, its
+impact in the mitigation of climate change is exaggerated, as the additional organic carbon
+in no-till cultivation is very small [ 113]. There have been various factors responsible for
+the adoption of conservation agriculture (CA), namely perception of individual beneﬁts,
+functional market exchange techniques to supply the mandatory resources for CA im-
+Sustainability 2021 ,13, 1318 12 of 21
+plementation, economic motivation for farmers, development of farmer organizations to
+encourage local adaptation, and the creation of a suitable environment by alliances of
+farmer organizations and institutions [114].
+The means to adapt to climate change are mainly modiﬁed farm practices, and are
+inﬂuenced greatly by the policy decisions suiting the climatic variability and climate
+extremes, along with social, political, and economic conditions [ 115]. The conventional
+intensiﬁcation of agriculture causes huge economic losses, out of which almost 80% are
+caused by mismanagement of nutrients, which makes nutrient management an important
+aspect [ 116]. Carbon sequestration, or an increase in soil organic carbon (SOC), can be
+encouraged by no-till farming, cover crops, manuring, nutrient management, agroforestry,
+and soil restoration. Moreover, carbon sequestration can reduce 5–15% of fossil-fuel
+emissions globally [ 117]. Direct-seeded rice (DSR) causes fewer GHG emissions compared
+to transplanted rice. Dry DSR and wet DSR have 76.2% and 60.4% lower potential for
+global warming, respectively, in comparison to transplanted rice. Moreover, wet DSR also
+produced a 10.8% higher yield than transplanted rice [118].
+Aerobic rice also has a huge potential in the mitigation of future climate change, as it
+saves 73% of irrigation water used in land preparation and 56% water used in the period of
+crop growth. Cultivation of aerobic rice by using micro-irrigation technologies is a suitable
+method for sustainable rice production. It also helps in reducing methane emission from
+rice ﬁelds [ 119]. There could be possible shortage of fresh water available for irrigation in
+the western US, China, and south, west and central Asia, which could lead to the conversion
+of 20–60 million ha of irrigation area to rainfed area, and cause a loss of 600–2900 pcal in
+food production [ 120]. Drip irrigation is one of the irrigation techniques being promoted to
+reduced groundwater overdraft and shocks induced by climate change. It has the potential
+to be resilient to climate change, and reduces the demand of groundwater for irrigation. But
+farmers are using drip irrigation for intensive agriculture, leading to further groundwater
+overextraction, causing Jevons paradox [ 121]. Water-saving irrigation techniques such
+as sprinkler irrigation and drip irrigation can help mitigate and adapt to climate change,
+and provide sustained economic beneﬁts. However, the incremental cost of mitigation in
+sprinkler irrigation is reported to be highest i.e., USD 476.03–691.64/t due to water-pressure
+requirements, which could add to GHG emissions [122].
+Agricultural practices based on site-speciﬁc information can help in reduced N appli-
+cation without lowering proﬁtability. Precision agriculture is therefore considered more
+proﬁtable than management of whole ﬁeld [ 123]. In northwestern India, inefﬁcient fertil-
+izer management by farmers has led to lower nitrogen use efﬁciency. A leaf color chart
+(LCC) was found very suitable to improve the time and fertilizer rate. Upon application of
+fertilizers, when the LCC showed less than 4 shade, the produced rice yield was on par
+with the recommended blanket dose of 120 Kg N/ha [ 124]. Application of fertilizers in rice
+at LCC 4 decreased methane and nitrous oxide emissions by 11% and 16%, respectively,
+over conventional N fertilizer application in split doses. In wheat, it led to 18% lower
+nitrous oxide emissions compared to conventional N fertilizer application [ 125]. Adoption
+of laser land leveling (LLL) has led to increased crop yields and farmer income. In the
+Raichur district of Karnataka, it was reported that LLL has raised the yield of paddy crops
+by 0.5 metric tons/ha, which can led to an upsurge in net farm income of INR 5000/an-
+num. It has also reduced cultivation costs and conﬁned the losses caused due to climatic
+variability [ 126]. Breeding of plants to form new varieties can be one way to cope with en-
+vironmental stresses. This will require germplasm selection, shortening of breeding cycles,
+and multilocation trials to test a variety’s suitability to the target environment [ 127,128].
+As climate change is predicted to increase the frequency and intensity of abiotic stress, it is
+important to generate stress-tolerant varieties as a mitigation strategy. The cloning of the
+SUB1A gene in rice plants has facilitated the incorporation of the gene into various high-
+yield varieties released in South Asian countries. These submergence-tolerant varieties
+produce a higher yield than the original varieties after being submerged for 18 days [ 129].
+Climate smart agriculture (CSA) aims to adapt to climate change by adopting several
+Sustainability 2021 ,13, 1318 13 of 21
+interventions, including water-smart practices, nutrient-smart practices, weather-smart
+activities, carbon-smart activities, and knowledge-smart activities. Climate-smart agricul-
+ture builds resilience to climate change by building evidence, enhancing local institutions’
+effectiveness, promoting agricultural policies according to climate, and linking agricultural
+ﬁnancing to climate [130].
+Most efﬁcient climate-smart technologies are those which either provide nutrients
+or water, or support soil structure. In semiarid West Africa, some technologies, namely
+half-moons, stone bunds and zai, and nutrient application were found suitable for main-
+taining food production and securing smallholder farmers [ 131]. Climate-smart agriculture
+technologies were studied in Punjab, Pakistan, and a higher productivity of cotton with
+higher returns and higher resource-use efﬁciency was observed [ 132]. The Indo-Gangetic
+plain is very vulnerable to climate change, which has adverse effects on the rice–wheat
+cropping of the area. Farmers have expressed their willingness to adopt climate-smart
+agriculture technologies that can transform conventional agricultural practices into more
+productive technologies. Laser land leveling (LLL), weather-advisory services, and crop
+insurance are the most-preferred CSA technologies of the eastern indo-gangetic plains
+(IGP), while the farmers of the western IGP mainly prefer direct seeding, LLL, zero tillage,
+crop insurance, and irrigation scheduling [ 133]. These mitigation strategies have huge
+mitigation and adaptation potentials. However, they depend upon the suitability of a
+technology to the region, people’s perception, economic viability, and technical complexity.
+Moreover, these strategies work well when a number of interventions are used together in
+solidarity with each other.
+6. Economic Impact of Climate Change and Climate-Smart Agriculture Technologies
+Climate change has initially had certain positive impacts, but the environment’s
+unavoidable warming is a negative externality. A rise in temperature beyond 3C has
+net negative results, and more than 7C can cause total welfare loss. The world’s social
+cost of carbon emission is expected to be USD 29/tC (tonnes of Carbon) in 2015, and to
+raise at 2% per year [ 134]. The net economic gains in the ﬁshery sector of Solomon Island
+would be considerable if mitigation strategies for climate change are adopted. Climate
+change also will severely affect agricultural markets, causing a reduction of 0.26% in global
+GDP [ 135]. There would be a projected annual loss of 0.2–1% in household welfare if
+the climate predicted for the 2080s occurred today [ 136] Both market and non-market
+damages increase in quadratic progression and are expected to cost 1.2% of GDP with a
+1C increase in mean global temperature [ 137]. If future mitigation strategies follow the
+adaptation of strategies used in the past, global income is projected to show a 23% decrease
+by 2100 and a wider gap in income inequality [ 138]. Global economic growth is projected
+to be reduced by 0.28% per year [ 139]. The economic beneﬁts of various climate-smart
+agriculture technologies can be seen in Table 2.
+Sustainability 2021 ,13, 1318 14 of 21
+Table 2. Incremental beneﬁts of climate-smart agriculture technologies.
+Location Crop Climate-Smart Technology Enhanced EfﬁciencyIncremental
+Economic BeneﬁtReferences
+Vietnam Rice Site-speciﬁc nutrient management Increased partial factor productivity of nitrogen 34 US$/ha [140]
+Philippines 106 US$/ha
+India 168 US$/ha
+Sindh, Pakistan Wheat Laser land levelingSaving of 21% irrigation water and reduced
+irrigation timeINR 23,250/acre [141]
+Punjab, PakistanRice-wheat
+cropping systemZero tillageHigher water productivity, saving of irrigation
+water, and higher fertilizer use efﬁciency- [142]
+Bed furrows
+Laser land leveling
+Nyando basin of KenyaMultiple crops
+and livestockStress-tolerant crop varietiesIncreased household income leading to
+household asset accumulation and investmentIncreased HH income by 83% [143]
+Improved livestock breeds Increased HH income by 76%
+Semi-arid tropics of India Groundnut Drought-tolerant varietiesIncrease in yield by 23%, lower variability in
+yield, increased share of risk beneﬁts in
+total beneﬁts17% reduction in variable cost [144]
+Karnal, Haryana Wheat Zero tillageEnhanced production by 1.88% and lower
+cultivation costHigher net income [145]
+Northwestern Indo-Gangetic
+plains of IndiaRice and wheat Laser land levelingReduced irrigation time, increased yield,
+reduced electricity chargesUS$ 143.5/ha/year [146]
+North western India Wheat Zero tillageReduced cultivation cost, reduced GHGs
+emissions, and increased yieldUS$ 97.5/ha [147]
+Upper Gangetic plains Wheat Site-speciﬁc nutrient managementIncreased yield by 29% over farmers fertilizer
+practices (FFP)INR 68,980/ha over FFP [148]
+Indo-Gangetic plains of IndiaRice–Wheat
+cropping systemImproved crop varieties Increased net returns INR 15,712/ha/yr [149]
+Laser land leveling INR 8119/ha/yr
+Zero-tillage INR 6951/ha/yr
+India Rice Direct-seeded rice Reduced irrigation and preparation costs Increase HH income by 16% [150]
+Tamilnadu, India Okra Drip irrigationSaving of irrigation water and electricity
+charges, reduced cultivation costINR 72,711/acre [151]
+Punjab, India DSR–Wheat Direct-seeded rice Saving of irrigation, lesser labor requirementINR 5050–INR 8100/ha over
+puddled transplanted rice
+(PTR)–Wheat[152]
+India Eggplant Drip irrigationReduced water, electricity and fertilizer use, and
+increased returns54% higher net returns [153]
+Sustainability 2021 ,13, 1318 15 of 21
+7. Conclusions and Prospects
+An increasing population has put a lot of pressure on agriculture to ensure the food
+and nutritional security of the world, which is further worsening with climate change.
+Even though there are uncertainties regarding the future climate scenario and its possible
+impacts, various studies report that climate change will decrease agricultural productivity
+in the coming years. The key factors of climate, namely temperature, precipitation, and
+greenhouse gases, signiﬁcantly hampered pest infestation, soil fertility, irrigation resources,
+physiology, and plants’ metabolic activities. A number of mitigation and adaptation
+strategies have been developed to offset the deleterious impact of climate change on
+agricultural sustainability. These technologies include water-smart practices (laser land
+leveling, rainwater harvesting, micro-irrigation, crop diversiﬁcation, raised-bed planting,
+direct-seeded rice), nutrient-smart practices (precision nutrient application, leaf color
+charts, crop residue management), weather-smart activities (stress-tolerant varieties, ICT-
+based agrometeorological services), carbon-smart activities (zero tillage, legumes, crop
+residue management) and knowledge-smart activities (agricultural extensions to enhance
+capacity-building). These technologies signiﬁcantly reduce the effects of climate change on
+crops, and make them more suited to the climate by minimizing the unfavorable impacts.
+Climate change is predicted to cause huge economic losses at both the micro and macro
+levels that can be mitigated through these interventions. But these interventions must be
+organized at the regional or local level to improve their efﬁcacy. Mitigation and adaptation
+strategies are expected to increase farmers’ income without compromising agricultural-
+production sustainability. The future of climate change and its associated impacts is highly
+unpredictable, which makes planning for mitigation and adaptation a bit complex. This
+necessitates the formulation of climate-resilient technologies involving an interdisciplinary
+approach according to the region. Suitable varieties need to be developed that could
+adapt to climatic variations, along with planned agronomic management and crop pest
+control. Farmers need to be educated regarding various climate-smart technologies, and be
+provided training to simplify their use at the ﬁeld level.
+Keynotes:
+1. Greenhouse-gas emissions at the global level are raising the CO 2content in the
+atmosphere, raising the global temperature due to greenhouse effect. However,
+landmasses have witnessed a higher increase in temperature than oceans.
+2. The precipitation scenario is altered, and more weather extremes are projected to be
+witnessed in the near future.
+3. Climate change is projected to have a deleterious impact on agricultural productivity.
+The raised temperature and altered precipitation are most likely to offset the positive
+impact of increased CO 2on plants.
+4. The warmer and humid climate created due to climate change is creating more
+horizons for pest infestations.
+5. Those climate-resilient technologies that are technically sound and economically
+viable must be framed using an interdisciplinary approach to mitigate climate change.
+Author Contributions: P .K. conceived of and designed the project; P .K. supervised the study; G.S.M.
+and M.K. wrote the paper; P .K. checked and corrected the ﬁnal draft. All authors have read and
+agreed to the published version of the manuscript.
+Funding: This research received no external funding.
+Institutional Review Board Statement: Not applicable.
+Informed Consent Statement: Not applicable.
+Data Availability Statement: Not applicable.
+Acknowledgments: The authors are thankful to the anonymous reviewers for their careful read.
+Conﬂicts of Interest: The authors declare that no conﬂict of interest exist.
+Sustainability 2021 ,13, 1318 16 of 21
+References
+1. World Meteorological Organization. International Meteorological Vocabulary , 2nd ed.; WMO: Geneva, Switzerland, 1992.
+2. IPCC. Climate change 2007: Impacts, adaptation and vulnerability. In Working Group II Contribution to the Fourth Assessment Report
+of the Intergovernmental Panel on Climate Change ; Cambridge University Press: Cambridge, UK, 2007.
+3. IPCC. Climate Change 2014: Synthesis Report ; Pachauri, R.K., Meyer, L.A., Eds.; Contribution of Working Groups I, II and III to the
+Fifth Assessment Report of the Intergovernmental Panel on Climate Change; IPCC: Geneva, Switzerland, 2014; 151p.
+4. Sathaye, J.; Shukla, P .R.; Ravindranath, N.H. Climate change, sustainable development and India: Global and national concerns.
+Curr. Sci. 2006 ,90, 314–325.
+5. Abeydeera, L.H.U.W.; Mesthrige, J.W.; Samarasinghalage, T.I. Global research on carbon emissions: A scientometric review.
+Sustainability 2019 ,11, 3972. [CrossRef]
+6. NASA Earth Observatory. Goddard Space Flight Centre United States. Available online: www.earthobservatory.nasa.gov
+(accessed on 15 May 2020).
+7. Arora, M.; Goel, N.K.; Singh, P . Evaluation of temperature trends over India/ Evaluation de tendances de temperature en Inde.
+Hydrol. Sci. J. 2005 ,50, 81–93. [CrossRef]
+8. NOAA. Earth System Research Laboratory (NOAA). 2020. Available online: www.esrl.noaa.gov (accessed on 15 December 2020).
+9. CDIAC. Carbon Dioxide Information Analysis Center. 2020. Available online: www.cdiac.ess-dive.lbl.gov (accessed on
+13 November 2020).
+10. Tol, R.S.J. The economic impact of climate change in the 20th and 21st centuries. Clim. Chang. 2013 ,117, 795–808. [CrossRef]
+11. Our World in Data. Available online: www.ourworldindata.org (accessed on 4 December 2020).
+12. Richie, H.; Roser, M. Our World in Data. CO2 and Greenhouse Emissions. 2017. Available online: https://ourworldindata.org/
+co2-and-other-greenhouse-gas-emissions (accessed on 12 November 2020).
+13. Wei, T.; Yang, S.; Moore, J.C.; Shi, P .; Cui, X.; Duan, Q.; Xu, B.; Dai, Y.; Yuan, W.; Wei, X.; et al. Developed and developing world
+responsibilities for historical climate change and CO 2mitigation. Proc. Natl. Acad. Sci. USA 2012 ,109, 12911–12915. [CrossRef]
+14. Hare, B.; Meinshausen, M. How much warming are we committed to and how much can be avoided? Clim. Chang. 2006 ,
+75, 111–149. [CrossRef]
+15. NCDC. National Climatic Data Center-National Center for Environmental Information (NOAA). 2020. Available online: www.
+ncdc.noaa.gov (accessed on 11 December 2020).
+16. Bokhari, S.A.A.; Rasul, G.; Ruane, A.C.; Hoogenboom, G.; Ahmad, A. The past and future changes in climate of the rice-wheat
+cropping zone in Punjab, Pakistan. Pak. J. Meteorol. 2017 ,13, 9–23.
+17. Kaur, N.; Kaur, P . Projected climate change under different scenarios in central region of Punjab, India. J. Agrometeorol. 2016 ,
+18, 88–92.
+18. Chen, H.; Sun, J. Projected changes in climate extremes in China in a 1.5C warmer world. Int. J. Climatol. 2018 ,38, 3607–3617.
+[CrossRef]
+19. Rajbhandari, R.; Shrestha, A.B.; Kulkarni, A.; Patwardhan, S.K.; Bajracharya, S.R. Projected changes in climate over the Indus
+river basin using a high resolution regional climate model (PRECIS). Clim. Dyn. 2015 ,44, 339–357. [CrossRef]
+20. Ning, L.; Riddle, E.E.; Bradley, R.S. Projected changes in climate extremes over the Northeastern United States. J. Climate 2015 ,
+28, 3289–3310. [CrossRef]
+21. Zhang, Y.G.; Nearing, M.A.; Zhang, X.C.; Xie, Y.; Wei, H. Projected rainfall erosivity changes under climate change from
+multimodel and multiscenario projections in Northeast China. J. Hydrol. 2010 ,384, 97–106. [CrossRef]
+22. Zaveri, E.; Russ, J.; Damania, R. Rainfall anomalies are a signiﬁcant driver of cropland expansion. Proc. Natl. Acad. Sci. USA 2020 ,
+117, 10225–10233. [CrossRef]
+23. Betts, R.A.; Alﬁeri, L.; Bradshaw, C.; Caeser, J.; Feyen, L.; Friedlingstein, P .; Gohar, L.; Koutroulis, A.; Lewis, K.; Morfopoulos,
+C.; et al. Changes in climate extremes, fresh water availability and vulnerability to food insecurity projected at 1.5C and 2C
+global warming with a higher-resolution global climate model. Phil. Trans. R. Soc. A 2018 ,376, 20160452. [CrossRef] [PubMed]
+24. World Population Review. Walnut, United States. Available online: www.worldpopulationreview.com (accessed on 12 May 2020).
+25. Alexandratos, N.; Bruinsma, J. World Agriculture: Towards 2030/2050 ; ESA Working Paper No. 12–03; FAO: Rome, Italy, 2012.
+26. Lobell, D.B.; Schlenker, W.; Costa-Roberts, J. Climate trends and global crop production since 1980. Science 2011 ,333, 616–620.
+[CrossRef]
+27. Malhi, G.S.; Kaur, M.; Kaushik, P .; Alyemeni, M.N.; Alsahli, A.; Ahmad, P . Arbuscular mycorrhiza in combating abiotic stresses in
+vegetables: An eco-friendly approach. Saudi J. Biol. Sci. 2020 . [CrossRef]
+28. Baul, T.K.; McDonald, M. Integration of Indigenous knowledge in addressing climate change. Indian J. Tradit. Knowl. 2015 ,
+1, 20–27.
+29. Moher, D.; Liberati, A.; Tetzlaff, J.; Altman, D.G. The prisma group. Preferred reporting items for systematic reviews and
+meta-analyses: The PRISMA statement. Int. J. Surg. 2010 ,8, 336–341.
+30. Fargnoli, M.; Lombardi, M. Safety vision of Agricultural tractors: An engineering perspective based on recent studies (2009–2019).
+Safety 2020 ,6, 1. [CrossRef]
+31. Stern, D.I.; Kaufmann, R.K. Anthropogenic and natural causes of climate change. Clim. Chang. 2014 ,122, 257–269. [CrossRef]
+32. Montzka, S.A.; Dlugokencky, E.J.; Butler, J.H. Non-CO 2greenhouse gases and climate change. Nature 2011 ,476, 43–50. [CrossRef]
+[PubMed]
+Sustainability 2021 ,13, 1318 17 of 21
+33. Groenigen, K.J.V .; Osenberg, C.W.; Hungate, B.A. Increased soil emissions of potent greenhouse gases under increased atmospheric
+CO 2.Nature 2011 ,475, 214–216. [CrossRef] [PubMed]
+34. Popp, A.; Lotze-Campen, H.; Bodirsky, B. Food consumption, diet shifts and associated non-CO 2greenhouse gases from
+agricultural production. Glob. Environ. Chang. 2010 ,20, 451–462. [CrossRef]
+35. O’Mara, F.P . The signiﬁcance of livestock as a contributor to global greenhouse gas emissions today and in the near future. Anim.
+Feed Sci. Technol. 2011 ,166–167 , 7–15. [CrossRef]
+36. Lesschen, J.P .; Berg, M.V .D.; Westhoek, H.J.; Oenema, O. Greenhouse gas emission proﬁles of European livestock sectors. Anim.
+Feed Sci. Technol. 2011 ,166–167 , 16–28. [CrossRef]
+37. Kahrl, F.; Li, Y.; Su, Y.; Tennigkeit, T.; Wilkes, A.; Xu, J. Greenhouse gas emissions from nitrogen fertilizer use in China. Environ.
+Sci. Policy 2010 ,13, 688–694. [CrossRef]
+38. Soltani, A.; Rajabi, M.H.; Zeinali, E.; Soltani, E. Energy inputs and greenhouse gases emissions in wheat production in Gorgan,
+Iran. Energy 2013 ,50, 54–61. [CrossRef]
+39. Mendelsohn, R. The impact of climate change on agriculture in developing countries. J. Nat. Res. Policy Res. 2009 ,1, 5–19.
+[CrossRef]
+40. Adams, R.M.; Hurd, B.H.; Lenhart, S.; Leary, N. Effects of global climate change on agriculture: An interpretative review. Clim.
+Res. 1998 ,11, 19–30. [CrossRef]
+41. Karimi, V .; Karimi, E.; Keshavarz, M. Climate change and agriculture: Impacts and adaptive responses in Iran. J. Integr. Agric.
+2018 ,17, 1–15. [CrossRef]
+42. Molua, E.L.; Lambi, C.M. The Economic Impact of Climate Change on Agriculture in Cameroon ; Policy Research Working Paper; The
+World Bank: Washington, DC, USA, 2007; pp. 1–31.
+43. Gay, C.; Estrada, F.; Conde, C.; Eakin, H.; Villers, L. Potential impacts of climate change on Agriculture: A case of study of coffee
+production in Veracruz, Mexico. Clim. Chang. 2006 ,79, 259–288. [CrossRef]
+44. Kang, Y.; Khan, S.; Ma, X. Climate change impacts on crop yield, crop water productivity and food security—A review. Prog. Nat.
+Sci.2009 ,19, 1665–1674. [CrossRef]
+45. Mahato, A. Climate change and its impact on agriculture. Int. J. Sci. Res. Publ. 2014 ,4, 1–6.
+46. Challinor, A.J.; Watson, J.; Lobell, D.B.; Howden, S.M.; Smith, D.R.; Chhetri, N. A meta-analysis of crop yield under climate
+change and adaptation. Nat. Clim. Chang. 2014 ,4, 287–291. [CrossRef]
+47. Rosenzweig, C.; Liverman, D. Predicted effects of climate change on agriculture: A comparison of temperate and tropical regions.
+InGlobal Climate Change: Implications, Challenges, and Mitigation Measures ; Majumdar, S.K., Ed.; PA The Pennsylvania Academy of
+Sciences: Grove City, PA, USA, 1992; pp. 342–361.
+48. Zhang, P .; Zhang, J.; Chen, M. Economic impacts of climate change on agriculture: The importance of additional climatic variables
+other than temperature and precipitation. J. Environ. Econ. Manag. 2017 ,83, 8–31. [CrossRef]
+49. Powell, J.P .; Reinhard, S. Measuring the effects of extreme weather events on yields. Weather Clim. Extrem. 2016 ,12, 69–79.
+[CrossRef]
+50. Li, Y.; Ye, W.; Wang, M.; Yan, X. Climate change and drought: A risk assessment of crop-yield impacts. Clim. Res. 2009 ,39, 31–46.
+[CrossRef]
+51. Stevanovic, M.; Popp, A.; Campen, H.L.; Dietrich, J.P .; Muller, C.; Bonsch, M.; Schmitz, C.; Bodirsky, B.L.; Humpenoder, F.; Weindl,
+I. The impact of high-end climate change on agricultural welfare. Sci. Adv. 2016 ,2, e1501452. [CrossRef]
+52. Bosello, F.; Zhang, J. Assessing Climate Change Impacts: Agriculture ; FEEM Working Paper No. 94.05; CMCC Research Paper
+No. 2; Elsevier: New York, NY, USA, 2005; Available online: https://ssrn.com/abstract=771245 (accessed on 18 January 2021).
+[CrossRef]
+53. Kumar, R.; Gautam, H.R. Climate change and its impact on agricultural productivity in India. J. Climatol. Weather Forecast. 2014 ,
+2, 1–3. [CrossRef]
+54. Shakoor, U.; Saboor, A.; Ali, I.; Mohsin, A.Q. Impact of climate change on agriculture: Empirical evidence from arid region. Pak. J.
+Agri. Sci. 2011 ,48, 327–333.
+55. Deutsch, C.A.; Tewksbury, J.J.; Tigchelaar, M.; Battisti, D.S.; Merrill, S.C.; Huey, R.B.; Naylor, R. Increase in crop losses to insect
+pests in a warming climate. Science 2018 ,361, 916–919. [CrossRef] [PubMed]
+56. Waha, K.; Muller, C.; Bondeau, A.; Dietrich, J.P .; Kurukulasuriya, P .; Heinke, J.; Lotze-Campen, H. Adaptation to climate change
+through the choice of cropping system and sowing date in sub-Saharan Africa. Glob. Environ. Chang. 2013 ,23, 130–143. [CrossRef]
+57. Dey, M.M.; Gosh, K.; Valmonte-Santos, R.; Rosegrant, M.W.; Chen, O.L. Economic impact of climate change and climate change
+adaptation strategies for ﬁsheries sector in Solomon Islands: Implication for food security. Mar. Policy 2016 ,67, 171–178.
+[CrossRef]
+58. Reyer, C.P .O.; Leuzinger, S.; Rammig, A.; Wolf, A.; Bartholomeus, R.P .; Bonfante, A.; Lorenzi, F.D.; Dury, M.; Gloning, P .; Jaoude,
+R.A.; et al. A plant’s perspective of extremes: Terrestrial plant responses to changing climatic variability. Glob. Chang. Biol. 2012 ,
+19, 75–89. [CrossRef] [PubMed]
+59. Gray, S.B.; Brady, S.M. Plant developmental responses to climate change. Dev. Biol. 2016 ,419, 64–77. [CrossRef] [PubMed]
+60. Cao, L.; Bala, G.; Caldeira, K.; Nemani, R.; Ban-Weiss, G. Importance of carbon dioxide physiological forcing to future climate
+change. Proc. Natl. Acad. Sci. USA 2010 ,107, 9513–9518. [CrossRef]
+Sustainability 2021 ,13, 1318 18 of 21
+61. DaMatta, F.M.; Grandis, A.; Arenque, B.C.; Buckeridge, M.S. Impacts of climate changes on crop physiology and food quality.
+Food Res. Int. 2010 ,43, 1814–1823. [CrossRef]
+62. Aydinalp, C.; Cresser, M. The effects of global climate change on agriculture. Am. Eur. J. Agric. Environ. Sci. 2008 ,3, 672–676.
+63. Seo, S.N.; Mendelsohn, R.; Munasinghe, M. Climate change and agriculture in Sri Lanka: A Ricardian valuation. Environ. Dev.
+Econ. 2005 ,10, 581–596. [CrossRef]
+64. Zilberman, D.; Liu, X.; Holst, D.R.; Sunding, D. The economics of climate change in agriculture. Mitig. Adapt. Strateg. Glob. Chang.
+2004 ,9, 365–382. [CrossRef]
+65. Lal, M.; Singh, K.K.; Rathore, L.S.; Srinivasan, G.; Saseendram, S.A. Vulnerability of rice and wheat yields in NW India to future
+changes in climate. Agric. For. Meteorol. 1998 ,89, 101–114. [CrossRef]
+66. Long, S.P .; Ainsworth, E.A.; Leakey, A.D.B.; Nosberger, J.; Ort, D.R. Food for thought: Lower-than-expected crop yield stimulation
+with rising CO 2concentrations. Science 2006 ,312, 1918–1921. [CrossRef] [PubMed]
+67. Deryng, D.; Elliott, J.; Folberth, C.; Muller, C.; Pugh, T.A.M.; Boote, K.J.; Conway, D.; Ruane, A.C.; Gerten, D.; Jones, J.W.; et al.
+Regional disparities in the beneﬁcial effects of rising CO 2concentrations on crop water productivity. Nat. Clim. Chang. 2016 ,
+6, 786–790. [CrossRef]
+68. Uddling, J.; Broberg, M.C.; Feng, Z.; Pleijel, H. Crop quality under rising atmospheric CO 2.Curr. Opin. Plant Biol. 2018 ,
+45, 262–267. [CrossRef] [PubMed]
+69. Madan, P .; Jagadish, S.V .K.; Craufurd, P .Q.; Fitzgerald, M.; Lafarge, T.; Wheeler, T.R. Effect of elevated CO 2and high temperature
+on seed-set and grain quality of rice. J. Exp. Bot. 2012 ,63, 3843–3852. [CrossRef]
+70. Myers, S.S.; Zanobetti, A.; Kloog, I.; Huybers, P .; Leakey, A.D.B.; Bloom, A.J.; Carlisle, E.; Dietterich, L.H.; Fitzgerald, G.;
+Hasegawa, T.; et al. Increasing CO 2threatens human nutrition. Nature 2014 ,510, 139–142. [CrossRef]
+71. Kaur, J.; Gosal, S.K.; Kaur, P . Effects of climate change on plant associated microbial communities and enzyme activities. Afr. J.
+Microbiol. Res. 2014 ,8, 3087–3093.
+72. Compant, S.; Heijden, M.G.A.V .D.; Sessitsch, A. Climate change effects on beneﬁcial plant-microorganism interactions. FEMS
+Microbiol. Ecol. 2010 ,73, 197–214. [CrossRef]
+73. Schlenker, W.; Roberts, M.J. Nonlinear temperature effects indicate severe damages to U.S. crop yields under climate change.
+Proc. Natl. Acad. Sci. USA 2009 ,106, 15594–15598. [CrossRef]
+74. Lee, J.; Gryze, S.D.; Six, J. Effect of climate change on ﬁeld crop production in California’s central valley. Clim. Chang. 2011 ,
+109, S335–S353. [CrossRef]
+75. Zhao, C.; Liu, B.; Piao, S.; Wang, X.; Lobell, D.B.; Huang, L.; Huang, M.; Yao, Y.; Bassu, S.; Clais, P .; et al. Temperature increase
+reduces global yields of major crops in four independent estimates. Proc. Natl. Acad. Sci. USA 2017 ,114, 9326–9331. [CrossRef]
+[PubMed]
+76. Cai, X.; Wang, D.; Laurent, R. Impact of climate change on crop yield: A case study of rainfed corn in Central Illinois. J. Appl.
+Meteorol. Climatol. 2009 ,48, 1868–1881. [CrossRef]
+77. Ray, D.K.; West, P .C.; Clark, M.; Gerber, J.S.; Prishchepov, V .; Chatterjee, S. Climate change has likely already affected global food
+production. PLoS ONE 2019 ,14, e0217148. [CrossRef]
+78. Tao, F.; Yokozawa, M.; Xu, Y.; Hayashi, Y.; Zhang, Z. Climate changes and trends in phenology and yields of ﬁeld crops in China,
+1981–2000. Agric. For. Meteorol. 2006 ,138, 82–92. [CrossRef]
+79. Liu, L.; Basso, B. Impacts of climate variability and adaptation strategies on crop yields and soil organic carbon in US Midwest.
+PLoS ONE 2020 ,15, e0225433. [CrossRef]
+80. Kukal, M.S.; Irmak, S. Climate-driven crop yield and yield variability and climate change impacts on the U.S. great plains
+agricultural production. Sci. Rep. 2018 ,8, 1–18. [CrossRef]
+81. Elad, Y.; Pertot, I. Climate change impact on plant pathogens and plant diseases. J. Crop Improv. 2014 ,28, 99–139. [CrossRef]
+82. Rosenzweig, C.; Iglesius, A.; Yang, X.B.; Epstein, P .R.; Chivian, E. Climate change and extreme weather events—Implications for
+food production, plant diseases, and pests. Glob. Chang. Human Health 2001 ,2, 90–104. [CrossRef]
+83. Shrestha, S. Effects of climate change in Agricultural Insect Pest. Acta Scient. Agric. 2019 ,3, 74–80. [CrossRef]
+84. Ghini, R.; Hamada, E.; Junior, M.J.P .; Marengo, J.A.; Goncalves, R.R.V . Risk analysis of climate change on coffee nematodes and
+leaf miner in Brazil. Pesqui. Agropecu. Braileira 2008 ,43, 187–194. [CrossRef]
+85. Chen, C.C.; McCarl, B.A. An investigation of the relationship between pesticide usage and climate change. Clim. Chang. 2001 ,
+50, 475–487. [CrossRef]
+86. Kocmankova, E.; Trnka, M.; Eitzinger, J.; Formayer, H.; Dubrovsky, M.; Semeradova, D.; Zalud, Z.; Juroch, J.; Mozny, M.
+Estimating the impact of climate change on the occurrence of selected pests in Central European region. Clim. Res. 2010 ,
+44, 95–105. [CrossRef]
+87. Aljaryian, R.; Kumar, L. Changing global risk of invading greenbug Schizaphis graminum under climate change. Crop Prot. 2016 ,
+88, 137–148. [CrossRef]
+88. Hof, A.R.; Svahlin, A. The potential effect of climate change on insect pest species’ geographical distribution in the Swedish
+boreal forest. Scand. J. For. Res. 2015 ,31, 1–15. [CrossRef]
+89. Kroschel, J.; Sporleder, M.; Tonnang, H.E.Z.; Juarez, H.; Carhuapoma, P .; Gonzales, J.C.; Simon, R. Predicting climate-change-
+caused changes in global temperature on potato tuber moth Phthorimaea operculella (Zeller) distribution and abundance using
+phenology modeling and GIS mapping. Agric. For. Meteorol. 2013 ,170, 228–241. [CrossRef]
+Sustainability 2021 ,13, 1318 19 of 21
+90. Luck, J.; Spackman, M.; Freeman, A.; Trebicki, P .; Grifﬁths, W.; Finlay, K.; Chakraborty, S. Climate change and diseases of food
+crops. Plant Pathol. 2011 ,60, 113–121. [CrossRef]
+91. Reddy, P .P . Impact of climate change on insect pests, pathogens and nematodes. Pest Manag. Hortic. Ecosyst. 2013 ,19, 225–233.
+92. Lamichhane, J.R.; Barzman, M.; Booij, K.; Boonekamp, P .; Desneux, N.; Huber, L.; Kudsk, P .; Langrell, S.R.H.; Ratnadass, A.;
+Ricci, O.; et al. Robust cropping systems to tackle pests under climate change. A review. Agron. Sustain. Dev. 2015 ,35, 443–459.
+[CrossRef]
+93. Biber-Freudenberger, L.; Ziemacki, J.; Tonnang, H.E.Z.; Borgemeister, C. Future risks of pest species under changing climatic
+conditions. PLoS ONE 2016 ,11, e0153237. [CrossRef]
+94. Gautam, H.R.; Bhardwaj, M.L.; Kumar, R. Climate change and its impact on plant diseases. Curr. Sci. 2013 ,105, 1685–1691.
+95. Korres, N.E.; Norsworthy, J.K.; Tehranchian, P .; Gitsopoulos, T.K.; Loka, D.A.; Oosterhuis, D.M.; Gealy, D.R.; Moss, S.R.; Burgos,
+N.R.; Miller, M.R.; et al. Cultivars to face climate change on crops and weeds: A review. Agron. Sustain Dev. 2016 ,36, 12–22.
+[CrossRef]
+96. Malhi, G.S.; Rana, M.C.; Rana, S.S.; Kaushik, P . Effect of individual or combined application of herbicide imazethapyr on nutrient
+uptake by blackgram ( Vigna mungo L.).J. Exp. Biol. Agric. Sci. 2020 ,8, 441–446. [CrossRef]
+97. Varanasi, A.; Prasad, P .V .V .; Jugulam, M. Impact of climate change factors on weeds and herbicide efﬁcacy. Adv. Agr. 2016 ,
+135, 108–138.
+98. Bajwa, A.A.; Farooq, M.; Al-Sadi, A.M.; Nawaz, A.; Jabran, K.; Siddique, K.H.M. Impact of climate change on biology and
+management of wheat pests. Crop Prot. 2020 ,137, 105304. [CrossRef]
+99. Semenza, J.C.; Ploubidis, G.B.; George, L.A. Climate change and climate variability: Personal motivation for adaptation and
+mitigation. Environ. Health 2011 ,10, 1–12. [CrossRef]
+100. Vuuren, D.P .V .; Issac, M.; Kundzewicz, Z.W.; Arnell, N.; Barker, T.; Criqui, P .; Berkhout, F.; Hilderink, H.; Hinkel, J.; Hof, A.; et al.
+The use of scenarios as the basis for combined assessment of climate change mitigation and mitigation. Glob. Environ. Chang.
+2010 ,21, 575–591. [CrossRef]
+101. Altieri, M.A.; Nicholls, C.I. The adaptation and mitigation potential of traditional agriculture in a changing climate. Clim. Chang.
+2017 ,140, 33–45. [CrossRef]
+102. Lal, R.; Delgado, J.A.; Groffman, P .M.; Millar, N.; Dell, C.; Rotz, A. Management to mitigate and adapt to climate change. J. Soil
+Water Conserv. 2011 ,66, 276–285. [CrossRef]
+103. Anderson, A. Climate change education for mitigation and adaptation. J. Educ. Sustain. Dev. 2012 ,6, 191–206. [CrossRef]
+104. Arbuckle, J.G.; Morton, L.W.; Hobbs, J. Understanding farmer perspectives on climate change adaptation and mitigation: The
+roles of trust in sources of climate information, climate change beliefs, and perceived risk. Environ. Behav. 2015 ,47, 205–234.
+[CrossRef]
+105. Smith, P .; Olesen, J.E. Synergies between the mitigation of, and adaptation to, climate change in agriculture. J. Agric. Sci. 2010 ,
+148, 543–552. [CrossRef]
+106. Ventakeswarlu, B.; Shanker, A.K. Climate change and agriculture: Adaptation and mitigation strategies. Indian J. Agr. 2009 ,
+54, 226–230.
+107. Sandhu, S.S.; Kaur, P .; Gill, K.K.; Vashisth, B.B. The effect of recent climate shifts on optimal sowing windows for wheat in Punjab,
+India. J. Water Clim. Chang. 2019 ,11, 1177–1190. [CrossRef]
+108. Verchot, L.V .; Noordwijk, M.V .; Kandji, S.; Tomich, T.; Ong, C.; Albrecht, A.; Mackensen, J.; Bantilan, C.; Anupama, K.V .; Palm, C.
+Climate change: Linking adaptation and mitigation through agroforestry. Mitig. Adapt. Strat. Glob. Chang. 2007 ,12, 901–918.
+[CrossRef]
+109. Aggarwal, P .K. Global climate change and Indian agriculture: Impacts, adaptation and mitigation. Indian J. Agric. Sci. 2008 ,
+78, 911–919.
+110. Lybbert, T.J.; Sumner, D.A. Agricultural technologies for climate change in developing countries: Policy options for innovation
+and technology diffusion. Food Policy 2012 ,37, 114–123. [CrossRef]
+111. Pisante, M.; Stagnari, F.; Acutis, M.; Bindi, M.; Brilli, L.; Stefano, V .D.; Carozzi, M. Conservation agriculture and climate change.
+InConservation Agriculture ; Farooq, M., Siddique, K., Eds.; Springer: Cham, Switzerland, 2014. [CrossRef]
+112. Erenstein, O.; Sayre, K.; Wall, P .; Hellin, J.; Dixon, J. Conservation agriculture in Maize and Wheat based systems in the
+(sub)tropics: Lessons from adaptation initiatives in South Asia, Mexico, and Southern Africa. J. Sustain. Agric. 2012 ,36, 180–206.
+[CrossRef]
+113. Powlson, D.S.; Stirling, C.M.; Jat, M.L.; Gerard, B.G.; Palm, C.A.; Sanchez, P .A.; Cassman, K.G. Limited potential of no-till
+agriculture for climate change mitigation. Nat. Clim. Chang. 2014 ,4, 678–683. [CrossRef]
+114. Brown, B.; Llewellyn, R.; Nuberg, I. Global learnings to inform the local adaptation of conservation agriculture in Eastern and
+Southern Africa. Glob. Food Sec. 2018 ,17, 213–220. [CrossRef]
+115. Smit, B.; Skinner, M.W. Adaptation options in agriculture to climate change: A typology. Mitig. Adapt. Strateg. Glob. Chang. 2002 ,
+7, 85–114. [CrossRef]
+116. Lu, Y.; Chadwick, D.; Norse, D.; Powlson, D.; Shi, W. Sustainable intensiﬁcation of China’s agriculture: The key role of nutrient
+management and climate change mitigation and adaptation. Agric. Ecosyst. Environ. 2015 ,209, 1–4. [CrossRef]
+117. Lal, R. Soil carbon sequestration impacts on global climate change and food security. Science 2004 ,304, 1623–1627. [CrossRef]
+[PubMed]
+Sustainability 2021 ,13, 1318 20 of 21
+118. Tao, Y.; Chen, Q.; Peng, S.; Wang, W.; Nie, L. Lower global warming potential and higher yield of wet direct-seeded rice in Central
+China. Agron. Sustain. Dev. 2016 ,36, 1–9. [CrossRef]
+119. Parthasarathi, T.; Vanitha, K.; Lakshamanakumar, P .; Kalalyarasi, D. Aerobic rice-mitigating water stress for the future climate
+change. Int. J. Agr. Plant Prod. 2012 ,3, 241–254.
+120. Elliott, J.; Deryng, D.; Muller, C.; Frieler, K.; Konzmann, M.; Gerten, D.; Glotter, M.; Florke, M.; Wada, Y.; Best, N.; et al. Constraints
+and potentials of future irrigation water availability on agricultural production under climate change. Proc. Natl. Acad. Sci. USA
+2014 ,111, 3239–3244. [CrossRef]
+121. Birkenholtz, T. Assessing India’s drip-irrigation boom: Efﬁciency, climate change and groundwater policy. Water Int. 2017 ,
+42, 663–677. [CrossRef]
+122. Zou, X.; Li, Y.; Cremades, R.; Gao, Q.; Wan, Y.; Qin, X. Cost-effectiveness analysis of water-saving irrigation technologies based on
+climate change response: A case study of China. Agric. Water Manag. 2013 ,129, 9–20. [CrossRef]
+123. Bongiovanni, R.; Lowenberg-Deboer, J. Precision agriculture and sustainability. Precis. Agric. 2004 ,5, 359–387. [CrossRef]
+124. Singh, Y.; Singh, B.; Ladha, J.K.; Bains, J.S.; Gupta, R.K.; Singh, J.; Balasubramaniam, V . On-farm evaluation of leaf color chart for
+need-based nitrogen management in irrigated transplanted rice in northwestern India. Nutr. Cycl. Agroecosyst. 2007 ,78, 167–176.
+[CrossRef]
+125. Bhatia, A.; Pathal, H.; Jain, N.; Singh, P .K.; Tomer, R. Greenhouse gas mitigation in rice-wheat system with leaf color chart-based
+urea application. Environ. Monit. Assess. 2012 ,184, 3095–3107. [CrossRef]
+126. Pal, B.D.; Kapoor, S.; Saroj, S.; Jat, M.L.; Kumar, Y.; Anantha, K.H. Impact of Laser Land Leveling on Food Production and Farmers’
+Income: Evidence from Drought Prone Semi-Arid Tropics in India ; IFPRI discussion paper 01960; IFPRI: Washington, DC, USA, 2020.
+127. Atlin, G.N.; Cairns, J.E.; Das, B. Rapid breeding and varietal replacement are critical to adaptation of cropping systems in the
+developing world to climate change. Glob. Food Sec. 2017 ,12, 31–37. [CrossRef] [PubMed]
+128. Chhogyell, N.; Pradhan, N.; Ghimiray, M.; Bajgai, Y. Evaluation of short duration rice ( Oryza sativa ) varieties as a strategy to cope
+with climate change. Proc. Bhutan Ecol. Soc. 2016 ,1, 91–103.
+129. Gregorio, G.B.; Islam, M.R.; Vergara, G.V .; Thirumeni, S. Recent advances in rice science to design salinity and other abiotic stress
+tolerant rice varieties. SABRAO J. Breed. Genet. 2013 ,45, 31–41.
+130. Lipper, L.; Thornton, P .; Campbell, B.M.; Baedeker, T.; Brainmoh, A.; Bwalya, M.; Caron, P .; Cattaneo, A.; Garrity, D.; Henry,
+K.; et al. Climate-smart agriculture for food security. Nat. Clim. Chang. 2014 ,4, 1068–1072. [CrossRef]
+131. Zougmore, R.; Jalloh, A.; Tioro, A. Climate-smart soil water and nutrient management options in semiarid West Africa: A review
+of evidence and analysis of stone bunds and zaitechniques. Agric. Food Sec. 2014 ,3, 1–8. [CrossRef]
+132. Imran, M.A.; Ali, A.; Ashfaq, M.; Hassan, S.; Culas, R.; Ma, C. Impact of climate smart agriculture (CSA) practices on cotton
+production and livelihood of farmers in Punjab, Pakistan. Sustainability 2018 ,10, 2101. [CrossRef]
+133. Taneja, G.; Pal, B.D.; Joshi, P .K.; Aggarwal, P .K.; Tyagi, N.K. Farmers’ preferences for climate-smart agriculture-an assessment
+in the Indo-Gangetic plain. In Climate Smart Agriculture in South Asia ; Pal, B., Kishore, A., Joshi, P ., Tyagi, N., Eds.; Springer:
+Singapore, 2019. [CrossRef]
+134. Tol, R.S.J. On the uncertainty about the total economic impact of climate change. Environ. Res. Econ. 2012 ,53, 97–116. [CrossRef]
+135. Costinot, A.; Donaldson, D.; Smith, C. Evolving comparative advantage and the impact of climate change in agricultural markets:
+Evidence from 1.7 million ﬁelds around the world. J. Pol. Econ. 2016 ,124, 20–25. [CrossRef]
+136. Ciscar, J.C.; Iglesias, A.; Feyen, L.; Szabo, L.; Regemorter, D.V .; Amelung, B.; Nicholls, R.; Watkiss, P .; Christensen, O.B.; Dankers,
+R.; et al. Physical and economic consequences of climate change in Europe. Proc. Natl. Acad. Sci. USA 2011 ,108, 2678–2683.
+[CrossRef]
+137. Hsiang, S.; Kopp, R.; Jina, A.; Rising, J.; Delgado, M.; Mohan, S.; Rasmussen, D.J.; Muir-Wood, R.; Wilson, P .; Oppenheimer,
+M.; et al. Estimating economic damage from climate change in the United States. Science 2017 ,356, 1362–1369. [CrossRef]
+138. Burke, M.; Hsiang, S.M.; Miguel, E. Global non-linear effect of temperature on economic production. Nature 2015 ,527, 235–239.
+[CrossRef] [PubMed]
+139. Carleton, T.A.; Hsiang, S.M. Social and economic impacts of climate. Science 2016 ,353, 9837. [CrossRef] [PubMed]
+140. Pampolino, M.F.; Manguiat, I.J.; Ramanathan, S.; Gines, H.C.; Tan, P .S.; Chi, T.T.N.; Rajendran, R.; Buresh, R.J. Environmental
+impact and economic benﬁts of site-speciﬁc nutrient management (SSNM) in irrigated rice systems. Agric. Syst. 2007 ,93, 1–24.
+[CrossRef]
+141. Wagan, S.A.; Memon, Q.U.A.; Wagan, T.A.; Memon, I.H.; Wagan, A. Economic analysis of laser land leveling technology water
+use efﬁciency and crop productivity of wheat crop in Sindh, Pakistan. J. Environ. Earth Sci. 2015 ,5, 21–25.
+142. Latif, A.; Shakir, A.S.; Rashid, M.U. Appraisal of economic impact of zero tillage, laser land levelling and bed-furrow intervention
+in Punjab, Pakistan. Pak. J. Eng. Appl. Sci. 2013 ,13, 65–81.
+143. Ogada, M.J.; Rao, E.J.O.; Radeny, M.; Recha, J.W.; Solomon, D. Cllimate-smart agriculture, household income and asset
+accumulation among smallholder farmers in Nyando basin of Kenya. World Dev. Perspect. 2020 . [CrossRef]
+144. Birthal, P .S.; Nigam, A.N.; Narayanan, A.V .; Kareem, K.A. Potential economic beneﬁts from adoption of improved drought-
+tolerant groundnut in India. Agric. Econ. Res. Rev. 2012 ,25, 1–14.
+145. Tripathi, R.S.; Raju, R.; Thimmappa, K. Impacts of zero tillage on economics of wheat production in Haryana. Agric. Econ. Res.
+Rev. 2013 ,26, 101–108.
+Sustainability 2021 ,13, 1318 21 of 21
+146. Aryal, J.P .; Mehrotra, M.B.; Jat, M.L.; Sidhu, H.S. Impacts of laser land leveling in rice-wheat systems of the north-western
+indo-gangetic plains of India. Food Sec. 2015 . [CrossRef]
+147. Aryal, J.P .; Sapkota, T.B.; Jat, M.L.; Bishnoi, J.K. On-farm economic and environmental impact of zero-tillage wheat: A case of
+north-west India. Expl. Agric. 2015 ,51, 1–16. [CrossRef]
+148. Singh, V .K.; Shukla, A.K.; Singh, M.P .; Majumdar, K.; Mishra, R.P .; Rani, M.; Singh, S.K. Effect of site-speciﬁc nutrient management
+on yield, proﬁt and apparent nutrient balance under pre-dominant cropping systems of Upper Gangetic Plains. Indian J. Agric.
+Sci.2015 ,85, 335–343.
+149. Khatri-Chhetri, A.; Aryal, J.P .; Sapkota, T.B.; Khurana, R. Economic beneﬁts of climate-smart agricultural practices to smallholder
+farmers in the Indo-Gangetic Plains of India. Curr. Sci. 2016 ,110, 1251–1256.
+150. Mishra, A.K.; Khanal, A.R.; Pede, V . Economic and resource conservation perspectives of direct seeded rice planting methods:
+Evidence from India. In Proceedings of the Agricultural and Applied Economics Association’s 2017 AAEA Annual Meeting,
+Chicago, IL, USA, 30 July–2 August 2016.
+151. Narayanamoorthy, A.; Devika, N. Economic and resource impacts of drip method of irrigation on okra cultivation: An analysis of
+ﬁeld survey data. J. Land Rural Stud. 2017 ,6, 15–33. [CrossRef]
+152. Bhullar, M.S.; Singh, S.; Kumar, S.; Gill, G. Agronomic and economic impacts of direct seeded rice in Punjab. Agric. Res. J. 2018 ,
+55, 236–242. [CrossRef]
+153. Narayanamoorthy, A.; Bhattarai, M.; Joshi, P . An assessment of the economic impact of drip irrigation in vegetable production in
+India. Agric. Econ. Res. Rev. 2018 ,31, 105–112. [CrossRef]
