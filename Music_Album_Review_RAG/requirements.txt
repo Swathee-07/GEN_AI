@@ -4,3 +4,5 @@ sentence-transformers
 chromadb
 scikit-learn
 requests
+matplotlib
+seaborn
