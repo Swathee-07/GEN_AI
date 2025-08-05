@@ -1,0 +1,6 @@
+streamlit
+nltk
+sentence-transformers
+chromadb
+scikit-learn
+requests
