@@ -180,8 +180,9 @@ with tab1:
             with st.chat_message("assistant"):
                 st.markdown(f'<div class="answer-container">{chat["answer"]}</div>', unsafe_allow_html=True)
                 with st.expander("Show Evidence"):
-                    top3 = chat["context"][:3]
+                    top3 = [str(ev) for ev in chat["context"][:3]]  # convert everything to string
                     st.info("\n\n".join(ev[:200] + "..." if len(ev) > 200 else ev for ev in top3))
+
         st.markdown('</div>', unsafe_allow_html=True)
 
 if prompt := st.chat_input("Ask about an album review...", key="chat_widget"):
