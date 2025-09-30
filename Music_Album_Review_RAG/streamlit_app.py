@@ -2,10 +2,10 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import os  # ✅ Added for robust file paths
+import os
 from app.rag import rag_answer
 from app.evaluation import all_metrics
-from app.chroma_db import initialize_db   # ✅ still keep this to set up DB at start
+from app.chroma_db import initialize_db
 
 # --- Page Configuration -------------------------------------------------------
 st.set_page_config(page_title="Music Album RAG", page_icon="🎵", layout="centered")
@@ -29,6 +29,7 @@ if "theme" not in st.session_state:
 if "prompt_mode" not in st.session_state:
     st.session_state.prompt_mode = "Direct Answering (Standard RAG)"
 
+# --- CSS Loader --------------------------------------------------------------
 def load_css(theme_name):
     theme = THEMES.get(theme_name.lower(), THEMES["dark"])
     st.markdown(f"""
@@ -83,34 +84,30 @@ def load_css(theme_name):
             border-bottom: 1px solid {theme['primary']};
             margin-bottom: 1rem;
         }}
-        /* ✅ FIX: don't override the expander icon color so default arrows render */
+        /* Fix expander arrows to render normally */
         [data-testid="collapsedControl"] {{
             background-color: {theme['primary']} !important;
-            /* NO forced color here */
         }}
     </style>
     """, unsafe_allow_html=True)
 
 load_css(st.session_state.theme)
 
-# --- Session State ------------------------------------------------------------
+# --- Session State -----------------------------------------------------------
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 if "user_input" not in st.session_state:
     st.session_state.user_input = ""
-# ✅ Initialize DB only once per session
 if "db" not in st.session_state:
     st.session_state.db = initialize_db()
 
-# --------------- SIDEBAR ------------------------------------------------------
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# --------------- SIDEBAR -----------------------------------------------------
 with st.sidebar:
     st.markdown('<div class="logo-container">', unsafe_allow_html=True)
-    
-    # ✅ Updated logo path to be robust for Streamlit Cloud
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     logo_path = os.path.join(BASE_DIR, "logo2.jpg")
     st.image(logo_path, width=80)
-    
     st.markdown("**Music RAG**")
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -125,7 +122,20 @@ with st.sidebar:
     ]
     for q in sample_questions:
         if st.button(q, key=f"sample_{q}", use_container_width=True):
-            st.session_state.user_input = q
+            # ✅ Directly compute answer + metrics for sample questions
+            answer, context = rag_answer(
+                q,
+                return_context=True,
+                prompt_mode=st.session_state.prompt_mode
+            )
+            metrics = all_metrics(q, answer)
+            st.session_state.chat_history.append({
+                "question": q,
+                "answer": answer,
+                "context": context,
+                "metrics": metrics,
+                "prompt_mode_used": st.session_state.prompt_mode
+            })
             st.rerun()
 
     st.divider()
@@ -137,7 +147,6 @@ with st.sidebar:
 
     st.divider()
     st.markdown("### Settings")
-
     st.markdown(f"**Current Mode:** {st.session_state.prompt_mode}")
     new_prompt_mode = st.radio(
         "Select Prompting Technique:",
@@ -171,6 +180,7 @@ st.markdown("""
 
 tab1, tab2 = st.tabs(["💬 Ask AI", "📊 Evaluation Dashboard"])
 
+# --- Ask AI Tab --------------------------------------------------------------
 with tab1:
     st.info(f"🤖 Currently using: **{st.session_state.prompt_mode}**")
     with st.container():
@@ -180,10 +190,7 @@ with tab1:
                 st.write(chat["question"])
             with st.chat_message("assistant"):
                 st.markdown(f'<div class="answer-container">{chat["answer"]}</div>', unsafe_allow_html=True)
-                # ---------- EXPANDER (shows top 3 evidence) ----------
                 with st.expander("Show Evidence"):
-                    # DEBUG line to validate deployed code
-                    st.write("DEBUG: Expander is working — showing top 3 evidence below.")
                     top3 = [str(ev) for ev in chat.get("context", [])[:3]]
                     if top3:
                         for i, ev in enumerate(top3, start=1):
@@ -191,8 +198,6 @@ with tab1:
                             st.info(f"**Evidence {i}:**\n\n{ev_text}")
                     else:
                         st.write("No evidence available.")
-                # -----------------------------------------------------
-
         st.markdown('</div>', unsafe_allow_html=True)
 
 if prompt := st.chat_input("Ask about an album review...", key="chat_widget"):
@@ -201,12 +206,10 @@ if prompt := st.chat_input("Ask about an album review...", key="chat_widget"):
 if st.session_state.user_input:
     query = st.session_state.user_input
     st.session_state.user_input = ""
-
     with st.chat_message("user"):
         st.write(query)
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
-            # ✅ Removed collection argument
             answer, context = rag_answer(
                 query,
                 return_context=True,
@@ -214,11 +217,12 @@ if st.session_state.user_input:
             )
             metrics = all_metrics(query, answer)
             st.session_state.chat_history.append({
-                "question": query, "answer": answer, "context": context, "metrics": metrics,
-                "prompt_mode_used": st.session_state.prompt_mode
+                "question": query, "answer": answer, "context": context,
+                "metrics": metrics, "prompt_mode_used": st.session_state.prompt_mode
             })
     st.rerun()
 
+# --- Evaluation Tab ----------------------------------------------------------
 with tab2:
     if not st.session_state.chat_history:
         st.info("Ask questions in the 'Ask AI' tab to see the evaluation here.")
@@ -237,6 +241,7 @@ with tab2:
                             v = c['metrics'].get(k)
                             if v and v > 0: scores[k].append(v)
                 return {k: round(mean(v), 3) if v else 0.0 for k, v in scores.items()}
+
             overall_metrics = compute_overall_metrics(eval_data)
 
             st.markdown("### 📊 Overall Performance")
@@ -265,7 +270,6 @@ with tab2:
             with st.expander("📖 View Ground Truth References"):
                 import json
                 try:
-                    # ✅ Updated path for Streamlit Cloud
                     queries_path = os.path.join(BASE_DIR, "evaluation", "queries.json")
                     with open(queries_path, 'r', encoding='utf-8') as f:
                         ground_truth = json.load(f)
