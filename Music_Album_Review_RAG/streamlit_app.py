@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os  # ✅ Added for robust file paths
 from app.rag import rag_answer
 from app.evaluation import all_metrics
 from app.chroma_db import initialize_db   # ✅ still keep this to set up DB at start
@@ -103,7 +104,12 @@ if "db" not in st.session_state:
 # --------------- SIDEBAR ------------------------------------------------------
 with st.sidebar:
     st.markdown('<div class="logo-container">', unsafe_allow_html=True)
-    st.image("./logo2.jpg", width=80)
+    
+    # ✅ Updated logo path to be robust for Streamlit Cloud
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    logo_path = os.path.join(BASE_DIR, "logo2.jpg")
+    st.image(logo_path, width=80)
+    
     st.markdown("**Music RAG**")
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -248,7 +254,9 @@ with tab2:
             with st.expander("📖 View Ground Truth References"):
                 import json
                 try:
-                    with open('evaluation/queries.json', 'r', encoding='utf-8') as f:
+                    # ✅ Updated path for Streamlit Cloud
+                    queries_path = os.path.join(BASE_DIR, "evaluation", "queries.json")
+                    with open(queries_path, 'r', encoding='utf-8') as f:
                         ground_truth = json.load(f)
                     st.json(ground_truth[:5])
                 except:
