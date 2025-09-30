@@ -83,9 +83,10 @@ def load_css(theme_name):
             border-bottom: 1px solid {theme['primary']};
             margin-bottom: 1rem;
         }}
-        /* ✅ FIXED: allow Streamlit’s default arrow icons to render */
+        /* ✅ FIX: don't override the expander icon color so default arrows render */
         [data-testid="collapsedControl"] {{
             background-color: {theme['primary']} !important;
+            /* NO forced color here */
         }}
     </style>
     """, unsafe_allow_html=True)
@@ -179,9 +180,18 @@ with tab1:
                 st.write(chat["question"])
             with st.chat_message("assistant"):
                 st.markdown(f'<div class="answer-container">{chat["answer"]}</div>', unsafe_allow_html=True)
+                # ---------- EXPANDER (shows top 3 evidence) ----------
                 with st.expander("Show Evidence"):
-                    top3 = [str(ev) for ev in chat["context"][:3]]  # convert everything to string
-                    st.info("\n\n".join(ev[:200] + "..." if len(ev) > 200 else ev for ev in top3))
+                    # DEBUG line to validate deployed code
+                    st.write("DEBUG: Expander is working — showing top 3 evidence below.")
+                    top3 = [str(ev) for ev in chat.get("context", [])[:3]]
+                    if top3:
+                        for i, ev in enumerate(top3, start=1):
+                            ev_text = ev[:700] + "..." if len(ev) > 700 else ev
+                            st.info(f"**Evidence {i}:**\n\n{ev_text}")
+                    else:
+                        st.write("No evidence available.")
+                # -----------------------------------------------------
 
         st.markdown('</div>', unsafe_allow_html=True)
 
