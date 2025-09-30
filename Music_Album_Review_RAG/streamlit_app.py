@@ -83,9 +83,9 @@ def load_css(theme_name):
             border-bottom: 1px solid {theme['primary']};
             margin-bottom: 1rem;
         }}
+        /* ✅ FIXED: allow Streamlit’s default arrow icons to render */
         [data-testid="collapsedControl"] {{
             background-color: {theme['primary']} !important;
-            color: white !important;
         }}
     </style>
     """, unsafe_allow_html=True)
