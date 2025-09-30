@@ -6,3 +6,8 @@ scikit-learn
 requests
 matplotlib
 seaborn
+torch
+pandas
+numpy
+transformers
+rouge
