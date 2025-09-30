@@ -60,20 +60,20 @@ def rag_answer(user_query, return_context=False,
         # ── 3) PROMPT MODES ───────────────────────────────────
         if prompt_mode == "Role-Based Answering (Advanced)":
             prompt = f"""
-You are a music expert. Return the sentence that directly answers the question.
-If absent, reply exactly: "No answer found in dataset."
+You are a music expert. Return exactly one full sentence copied from TEXT that directly answers the question.
+Only if no such sentence exists in TEXT, reply exactly: No answer found in dataset.
 
 TEXT:
 {"\n\n".join(context_chunks)}
 
 QUESTION: {user_query}
 
-EXACT SENTENCE:
+ANSWER:
 """.strip()
         else:  # Direct / Standard
             prompt = f"""
-Answer with the exact sentence from the text below that answers the question.
-If it is missing, say: "No answer found in dataset."
+Answer with exactly one full sentence copied from the text below that answers the question.
+Only if no such sentence exists in TEXT, reply exactly: No answer found in dataset.
 
 TEXT:
 {"\n\n".join(context_chunks)}
@@ -90,7 +90,10 @@ A:
             "model": MODEL_NAME,
             "messages": [
                 {"role": "system",
-                 "content": "Return only sentences that exactly appear in TEXT."},
+                 "content": (
+                     "Return exactly one full sentence copied from TEXT that answers the question. "
+                     "Only if no such sentence exists in TEXT, reply exactly: No answer found in dataset."
+                 )},
                 {"role": "user", "content": prompt}
             ],
             "max_tokens": 120,
@@ -112,6 +115,15 @@ A:
                 if data.get("choices"):
                     raw = data["choices"][0]["message"]["content"].strip()
                     answer = clean_answer(raw)
+
+                    # ── 5) FALLBACK CHECK ─────────────────────
+                    if answer == "No answer found in dataset.":
+                        for ch in context_chunks:
+                            # basic keyword overlap heuristic
+                            if any(word.lower() in ch.lower()
+                                   for word in user_query.split()):
+                                answer = ch.strip()
+                                break
                 else:
                     answer = "Error: Invalid response from API."
                 break                                     # success →
@@ -151,5 +163,6 @@ def clean_answer(text: str) -> str:
     ]
     for f in fillers:
         text = text.replace(f, "")
-    text = text.strip(" \"'.,!?:;")
+    # keep punctuation intact, just trim whitespace + quotes
+    text = text.strip().strip('"').strip("'")
     return re.sub(r"\s+", " ", text)

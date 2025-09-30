@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 from app.rag import rag_answer
 from app.evaluation import all_metrics
+from app.chroma_db import initialize_db   # ✅ still keep this to set up DB at start
 
 # --- Page Configuration -------------------------------------------------------
 st.set_page_config(page_title="Music Album RAG", page_icon="🎵", layout="centered")
@@ -48,20 +48,16 @@ def load_css(theme_name):
         [data-testid="stSidebar"] * {{
             color: {theme['text']} !important;
         }}
-        
-        /* FINAL FIX: Force button text visibility in light theme */
         [data-testid="stSidebar"] .stButton > button {{
             color: {theme['button_text']} !important;
             background-color: {theme['button_bg']} !important;
             border: 2px solid {theme['primary']} !important;
             font-weight: 600 !important;
         }}
-        
         [data-testid="stSidebar"] .stButton > button:hover {{
             background-color: {theme['primary']} !important;
             color: white !important;
         }}
-
         .ep-expander__container, .stTable, .stDataFrame {{
             color: {theme['text']} !important;
             background-color: {theme['bg']} !important;
@@ -100,10 +96,12 @@ if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 if "user_input" not in st.session_state:
     st.session_state.user_input = ""
+# ✅ Initialize DB only once per session
+if "db" not in st.session_state:
+    st.session_state.db = initialize_db()
 
-# --------------- SIDEBAR (ARROW REMOVED) -------------------------------------
+# --------------- SIDEBAR ------------------------------------------------------
 with st.sidebar:
-    # Logo with styling
     st.markdown('<div class="logo-container">', unsafe_allow_html=True)
     st.image("./logo2.jpg", width=80)
     st.markdown("**Music RAG**")
@@ -115,7 +113,7 @@ with st.sidebar:
         "What major British award did the song win in 2012?",
         "When was the song 'Hello' by Adele released?",
         "What musical styles does 'Dynamite' incorporate?",
-        "Who wrote 'Thinking Out Loud' ?",
+        "Who wrote 'Thinking Out Loud' with Ed Sheeran?",
         "What musical genres are incorporated in Happier Than Ever?"
     ]
     for q in sample_questions:
@@ -133,7 +131,6 @@ with st.sidebar:
     st.divider()
     st.markdown("### Settings")
 
-    # Prompt-mode selector
     st.markdown(f"**Current Mode:** {st.session_state.prompt_mode}")
     new_prompt_mode = st.radio(
         "Select Prompting Technique:",
@@ -145,7 +142,6 @@ with st.sidebar:
         st.session_state.prompt_mode = new_prompt_mode
         st.rerun()
 
-    # Theme switcher
     switches = {"Dark": "🌙", "Light": "☀️"}
     new_theme = st.radio(
         "Theme",
@@ -177,10 +173,9 @@ with tab1:
                 st.write(chat["question"])
             with st.chat_message("assistant"):
                 st.markdown(f'<div class="answer-container">{chat["answer"]}</div>', unsafe_allow_html=True)
-                # FIXED: Show only top 3 evidence chunks
                 with st.expander("Show Evidence"):
                     top3 = chat["context"][:3]
-                    st.info("\n\n".join(top3))
+                    st.info("\n\n".join(ev[:200] + "..." if len(ev) > 200 else ev for ev in top3))
         st.markdown('</div>', unsafe_allow_html=True)
 
 if prompt := st.chat_input("Ask about an album review...", key="chat_widget"):
@@ -194,7 +189,12 @@ if st.session_state.user_input:
         st.write(query)
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
-            answer, context = rag_answer(query, return_context=True, prompt_mode=st.session_state.prompt_mode)
+            # ✅ Removed collection argument
+            answer, context = rag_answer(
+                query,
+                return_context=True,
+                prompt_mode=st.session_state.prompt_mode
+            )
             metrics = all_metrics(query, answer)
             st.session_state.chat_history.append({
                 "question": query, "answer": answer, "context": context, "metrics": metrics,
@@ -212,7 +212,6 @@ with tab2:
         else:
             from statistics import mean
             def compute_overall_metrics(chat_list):
-                # UPDATED METRICS - Only F1, Precision, Recall, Cosine, LLM+F1, ROUGE-L
                 keys = ['f1', 'precision', 'recall', 'cosine', 'f1_llm_combined', 'rougeL']
                 scores = {k: [] for k in keys}
                 for c in chat_list:
