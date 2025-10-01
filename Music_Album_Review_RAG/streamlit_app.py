@@ -1,289 +1,302 @@
-import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+# streamlit_app.py
 import os
+import json
+import statistics as stats
+import pandas as pd
+import streamlit as st
+
 from app.rag import rag_answer
 from app.evaluation import all_metrics
 from app.chroma_db import initialize_db
 
-# --- Page Configuration -------------------------------------------------------
-st.set_page_config(page_title="Music Album RAG", page_icon="🎵", layout="centered")
+# ---------------- Page config ----------------
+st.set_page_config(page_title="Music Album Review RAG", page_icon="🎵", layout="centered")
 
-# --------------- THEME --------------------------------------------------------
+# ---------------- Theme ----------------------
 THEMES = {
-    "light": {
-        "primary": "#4A0D66", "bg": "#FFFFFF", "text": "#262730",
-        "secondary_bg": "#F0E4F4", "sidebar_bg": "#F8F8F8",
-        "box_bg": "#f7efff", "button_text": "#262730", "button_bg": "#FFFFFF"
-    },
-    "dark": {
-        "primary": "#C39BD3", "bg": "#0E1117", "text": "#FAFAFA",
-        "secondary_bg": "#2C1D38", "sidebar_bg": "#171420",
-        "box_bg": "#321352", "button_text": "#FAFAFA", "button_bg": "#2C1D38"
-    }
+    "light": {"primary": "#4A0D66", "bg": "#FFFFFF", "text": "#262730", "sidebar_bg": "#F8F8F8", "box_bg": "#f7efff"},
+    "dark":  {"primary": "#C39BD3", "bg": "#0E1117", "text": "#FAFAFA", "sidebar_bg": "#171420", "box_bg": "#321352"},
 }
+if "theme" not in st.session_state: st.session_state.theme = "dark"
+if "prompt_mode" not in st.session_state: st.session_state.prompt_mode = "Direct Answering (Standard RAG)"
+if "chat_history" not in st.session_state: st.session_state.chat_history = []
+if "user_input" not in st.session_state: st.session_state.user_input = ""
+if "sidebar_open" not in st.session_state: st.session_state.sidebar_open = True
 
-if "theme" not in st.session_state:
-    st.session_state.theme = "dark"
-if "prompt_mode" not in st.session_state:
-    st.session_state.prompt_mode = "Direct Answering (Standard RAG)"
+def apply_theme():
+    t = THEMES[st.session_state.theme]
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{ background-color: {t['bg']}; color: {t['text']}; }}
+        section[data-testid="stSidebar"] {{ background-color: {t['sidebar_bg']}; width: 260px !important; }}
+        .stButton>button {{ color: {t['text']}; border: 1px solid {t['primary']}; background: transparent; }}
+        a, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {{ color: {t['primary']} !important; }}
 
-# --- CSS Loader --------------------------------------------------------------
-def load_css(theme_name):
-    theme = THEMES.get(theme_name.lower(), THEMES["dark"])
-    st.markdown(f"""
-    <style>
-        html, body, [class*="st-"], [class*="css-"] {{
-            font-family: 'Poppins', sans-serif;
-            color: {theme['text']} !important;
-        }}
-        .stApp {{
-            background-color: {theme['bg']} !important;
-            color: {theme['text']} !important;
-        }}
-        [data-testid="stSidebar"] {{
-            color: {theme['text']} !important;
-            background-color: {theme['sidebar_bg']} !important;
-            width: 240px !important;
-        }}
-        [data-testid="stSidebar"] * {{
-            color: {theme['text']} !important;
-        }}
-        [data-testid="stSidebar"] .stButton > button {{
-            color: {theme['button_text']} !important;
-            background-color: {theme['button_bg']} !important;
-            border: 2px solid {theme['primary']} !important;
-            font-weight: 600 !important;
-        }}
-        [data-testid="stSidebar"] .stButton > button:hover {{
-            background-color: {theme['primary']} !important;
-            color: white !important;
-        }}
-        .ep-expander__container, .stTable, .stDataFrame {{
-            color: {theme['text']} !important;
-            background-color: {theme['bg']} !important;
-        }}
         .answer-container {{
-            background-color: {theme['box_bg']};
-            border-left: 5px solid {theme['primary']};
-            color: {theme['text']} !important;
-            border-radius: 8px;
-            padding: 1rem 1.5rem;
-            margin-bottom: 1rem;
+            background-color: {t['box_bg']}; border-left: 5px solid {t['primary']};
+            border-radius: 8px; padding: 1rem 1.5rem; margin-bottom: 1rem; color: {t['text']};
         }}
+        [data-testid="collapsedControl"] {{ background-color: {t['primary']} !important; }}
+
+        /* EXACT scrollable-chat from your snippet */
         .scrollable-chat {{
             max-height: 55vh;
             overflow-y: auto;
             padding-bottom: 1rem;
             margin-bottom: 2rem;
         }}
-        .logo-container {{
-            text-align: center;
-            padding: 1rem 0;
-            border-bottom: 1px solid {theme['primary']};
-            margin-bottom: 1rem;
-        }}
-        /* Fix expander arrows to render normally */
-        [data-testid="collapsedControl"] {{
-            background-color: {theme['primary']} !important;
-        }}
-    </style>
-    """, unsafe_allow_html=True)
+        /* Keep entire Ask AI centered and input visually fixed at bottom-center */
+        .centered {{ width:min(920px,96%); margin:0 auto; }}
+        .input-wrap {{ position: sticky; bottom: 0; left: 0; right: 0; }}
 
-load_css(st.session_state.theme)
+        /* Sidebar arrow bar */
+        .sb-top {{ display:flex; align-items:center; justify-content:flex-start; height:36px; padding:6px 6px 4px 6px; border-bottom:1px solid {t['primary']}; }}
+        .sb-arrow {{
+            width:28px; height:28px; border-radius:6px; cursor:pointer; user-select:none;
+            border:2px solid {t['primary']}; background: transparent; color:{t['text']};
+            font-weight:800; line-height:22px; display:inline-flex; align-items:center; justify-content:center;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
 
-# --- Session State -----------------------------------------------------------
-if "chat_history" not in st.session_state:
-    st.session_state.chat_history = []
-if "user_input" not in st.session_state:
-    st.session_state.user_input = ""
+apply_theme()
+
+# ---------------- Optional secrets ----------------
+if hasattr(st, "secrets"):
+    try:
+        for k in ["OPENAI_API_KEY", "GROQ_API_KEY", "GOOGLE_API_KEY"]:
+            v = st.secrets.get(k, "")
+            if v: os.environ[k] = v
+    except Exception:
+        pass
+
+# ---------------- Paths/DB --------------------
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+def asset_path(*parts): return os.path.join(BASE_DIR, *parts)
+
 if "db" not in st.session_state:
     st.session_state.db = initialize_db()
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# ---------------- Utilities -------------------
+def normalize_question(q: str) -> str:
+    if not q: return ""
+    q = q.strip().lower()
+    q = q.replace("’", "'").replace("“", '"').replace("”", '"')
+    q = " ".join(q.split())
+    return q
 
-# --------------- SIDEBAR -----------------------------------------------------
-with st.sidebar:
-    st.markdown('<div class="logo-container">', unsafe_allow_html=True)
-    logo_path = os.path.join(BASE_DIR, "logo2.jpg")
-    st.image(logo_path, width=80)
-    st.markdown("**Music RAG**")
-    st.markdown('</div>', unsafe_allow_html=True)
+def compute_metrics_with_fallback(q_raw: str, ans: str):
+    def safe_metrics(q, a):
+        try:
+            m = all_metrics(q, a) or {}
+        except Exception:
+            m = {}
+        out = {}
+        for k in ["f1","precision","recall","cosine","f1_llm_combined","rougeL"]:
+            try: out[k] = float(m.get(k, 0.0))
+            except Exception: out[k] = 0.0
+        return out
 
-    st.markdown("### Sample Questions")
-    sample_questions = [
+    m = safe_metrics(q_raw, ans)
+    if all(v == 0.0 for v in m.values()):
+        qn = normalize_question(q_raw)
+        m2 = safe_metrics(qn, ans)
+        if all(v == 0.0 for v in m2.values()):
+            m3 = safe_metrics(qn.rstrip("?"), ans)
+            if sum(m3.values()) > sum(m2.values()):
+                return m3
+        else:
+            return m2
+    return m
+
+# ---------------- Sidebar ---------------------
+def sidebar_body():
+    st.markdown("### Music RAG")
+    logo = asset_path("logo2.jpg")
+    if os.path.exists(logo):
+        st.image(logo, width=80)
+
+    st.markdown("#### Sample Questions")
+    samples = [
         "When was the album Happier Than Ever by Billie Eilish released?",
         "What major British award did the song win in 2012?",
         "When was the song 'Hello' by Adele released?",
         "What musical styles does 'Dynamite' incorporate?",
-        "Who wrote 'Thinking Out Loud' with Ed Sheeran?",
-        "What musical genres are incorporated in Happier Than Ever?"
     ]
-    for q in sample_questions:
-        if st.button(q, key=f"sample_{q}", use_container_width=True):
-            # ✅ Directly compute answer + metrics for sample questions
-            answer, context = rag_answer(
-                q,
-                return_context=True,
-                prompt_mode=st.session_state.prompt_mode
-            )
-            metrics = all_metrics(q, answer)
-            st.session_state.chat_history.append({
-                "question": q,
-                "answer": answer,
-                "context": context,
-                "metrics": metrics,
-                "prompt_mode_used": st.session_state.prompt_mode
-            })
-            st.rerun()
+    for i, q in enumerate(samples):
+        if st.button(q, key=f"sample_{i}", use_container_width=True):
+            st.session_state.user_input = q
+
+    st.divider(); st.markdown("#### Settings")
+    mode = st.radio(
+        "Select Prompting Technique",
+        ["Direct Answering (Standard RAG)", "Role-Based Answering (Advanced)"],
+        index=0 if st.session_state.prompt_mode == "Direct Answering (Standard RAG)" else 1,
+        key="prompt_selector",
+    )
+    if mode != st.session_state.prompt_mode:
+        st.session_state.prompt_mode = mode; st.rerun()
+
+    theme_choice = st.radio("Theme", ["dark", "light"], index=0 if st.session_state.theme=="dark" else 1, horizontal=True)
+    if theme_choice != st.session_state.theme:
+        st.session_state.theme = theme_choice; st.rerun()
 
     st.divider()
     if st.session_state.chat_history:
-        st.markdown("### Chat History")
-        if st.button("🗑️ Clear History", use_container_width=True):
-            st.session_state.chat_history = []
-            st.rerun()
+        st.markdown("#### Chat History")
+        if st.button("Clear History", use_container_width=True):
+            st.session_state.chat_history = []; st.rerun()
 
-    st.divider()
-    st.markdown("### Settings")
-    st.markdown(f"**Current Mode:** {st.session_state.prompt_mode}")
-    new_prompt_mode = st.radio(
-        "Select Prompting Technique:",
-        ("Direct Answering (Standard RAG)", "Role-Based Answering (Advanced)"),
-        index=0 if st.session_state.prompt_mode == "Direct Answering (Standard RAG)" else 1,
-        key="prompt_selector"
+with st.sidebar:
+    st.markdown(
+        f"""
+        <div class="sb-top">
+            <button id="sb-arrow" class="sb-arrow" title="Collapse/Expand">{'◀' if st.session_state.sidebar_open else '▶'}</button>
+        </div>
+        <script>
+        (function(){{
+            const btn = window.parent.document.getElementById("sb-arrow");
+            if (btn && !btn._bound) {{
+                btn._bound = true;
+                btn.addEventListener("click", () => {{
+                    const native = window.parent.document.querySelector('[data-testid="collapsedControl"]');
+                    if (native) native.click();
+                }});
+            }}
+        }})();
+        </script>
+        """,
+        unsafe_allow_html=True,
     )
-    if new_prompt_mode != st.session_state.prompt_mode:
-        st.session_state.prompt_mode = new_prompt_mode
-        st.rerun()
 
-    switches = {"Dark": "🌙", "Light": "☀️"}
-    new_theme = st.radio(
-        "Theme",
-        list(switches.keys()),
-        index=0 if st.session_state.theme == "dark" else 1,
-        format_func=lambda v: f"{switches[v]} {v}",
-        horizontal=True
-    )
-    if new_theme.lower() != st.session_state.theme:
-        st.session_state.theme = new_theme.lower()
-        st.rerun()
+    if st.session_state.sidebar_open:
+        sidebar_body()
 
-# --------------- MAIN APP -----------------------------------------------------
+# ---------------- Title above tabs ----------------
 st.markdown("""
-<h1 style='color: #C39BD3; font-weight: 800; font-size: 2.7rem; margin-bottom:8px;margin-top:0'>
-<span style="font-size:2.6rem;vertical-align:middle;">🎵</span> 
+<h1 style='color: #C39BD3; font-weight: 800; font-size: 2.7rem; margin-bottom:6px;margin-top:0' class='centered'>
+<span style="font-size:2.2rem;vertical-align:middle;">🎵</span> 
 <span style='color:#C39BD3'>Music Album</span> <span style="color:#9b59b6">Review <span style="color:#4A0D66">RAG</span></span>
 </h1>
 """, unsafe_allow_html=True)
 
-tab1, tab2 = st.tabs(["💬 Ask AI", "📊 Evaluation Dashboard"])
+# ---------------- Tabs -----------------------
+tab_ask, tab_eval = st.tabs(["Ask AI", "Evaluation Dashboard"])
 
-# --- Ask AI Tab --------------------------------------------------------------
-with tab1:
-    st.info(f"🤖 Currently using: **{st.session_state.prompt_mode}**")
-    with st.container():
-        st.markdown('<div class="scrollable-chat">', unsafe_allow_html=True)
-        for chat in st.session_state.chat_history:
-            with st.chat_message("user"):
-                st.write(chat["question"])
-            with st.chat_message("assistant"):
-                st.markdown(f'<div class="answer-container">{chat["answer"]}</div>', unsafe_allow_html=True)
-                with st.expander("Show Evidence"):
-                    top3 = [str(ev) for ev in chat.get("context", [])[:3]]
-                    if top3:
-                        for i, ev in enumerate(top3, start=1):
-                            ev_text = ev[:700] + "..." if len(ev) > 700 else ev
-                            st.info(f"**Evidence {i}:**\n\n{ev_text}")
-                    else:
-                        st.write("No evidence available.")
-        st.markdown('</div>', unsafe_allow_html=True)
+# ---------------- Ask AI (scrollable-chat + pinned bottom input) ---------------
+with tab_ask:
+    st.markdown("<div class='centered'>", unsafe_allow_html=True)
+    st.info(f"Currently using: {st.session_state.prompt_mode}")
+    st.markdown("</div>", unsafe_allow_html=True)
 
-if prompt := st.chat_input("Ask about an album review...", key="chat_widget"):
-    st.session_state.user_input = prompt
+    # History in a fixed-height scrollable area; centered
+    st.markdown("<div class='centered'>", unsafe_allow_html=True)
+    st.markdown("<div class='scrollable-chat'>", unsafe_allow_html=True)
+    for chat in st.session_state.chat_history:
+        with st.chat_message("user"):
+            st.write(chat["question"])
+        with st.chat_message("assistant"):
+            st.markdown(f"<div class='answer-container'>{chat['answer']}</div>", unsafe_allow_html=True)
+            with st.expander("Show Evidence"):
+                top3 = [str(ev) for ev in (chat.get("context") or [])[:3]]
+                if top3:
+                    preview = "\n\n".join(ev[:200] + "..." if len(ev) > 200 else ev for ev in top3)
+                    st.info(preview)
+                else:
+                    st.write("No evidence available.")
+    st.markdown("</div>", unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 
-if st.session_state.user_input:
-    query = st.session_state.user_input
-    st.session_state.user_input = ""
-    with st.chat_message("user"):
-        st.write(query)
-    with st.chat_message("assistant"):
-        with st.spinner("Thinking..."):
-            answer, context = rag_answer(
-                query,
-                return_context=True,
-                prompt_mode=st.session_state.prompt_mode
-            )
-            metrics = all_metrics(query, answer)
-            st.session_state.chat_history.append({
-                "question": query, "answer": answer, "context": context,
-                "metrics": metrics, "prompt_mode_used": st.session_state.prompt_mode
-            })
-    st.rerun()
+    # Bottom-center input; visually fixed because scrollable area is above it
+    st.markdown("<div class='input-wrap centered'>", unsafe_allow_html=True)
+    prompt = st.chat_input("Ask about an album review...", key="chat_widget")
+    st.markdown("</div>", unsafe_allow_html=True)
 
-# --- Evaluation Tab ----------------------------------------------------------
-with tab2:
+    if prompt:
+        st.session_state.user_input = prompt
+
+    if st.session_state.user_input:
+        q_raw = st.session_state.user_input
+        st.session_state.user_input = ""
+        with st.chat_message("user"): st.write(q_raw)
+        with st.chat_message("assistant"):
+            with st.spinner("Thinking..."):
+                try:
+                    ans, ctx = rag_answer(q_raw, return_context=True, prompt_mode=st.session_state.prompt_mode)
+                except Exception as e:
+                    st.error(f"Inference failed. If this shows 401, configure API secrets. Error: {e}")
+                    ans, ctx = ("Sorry, the model could not answer due to a configuration error.", [])
+                mets = compute_metrics_with_fallback(q_raw, ans)
+                st.markdown(f"<div class='answer-container'>{ans}</div>", unsafe_allow_html=True)
+                if ctx:
+                    with st.expander("Show Evidence"):
+                        top3 = [str(ev) for ev in (ctx or [])[:3]]
+                        preview = "\n\n".join(ev[:200] + "..." if len(ev) > 200 else ev for ev in top3) if top3 else "No evidence available."
+                        st.info(preview)
+        st.session_state.chat_history.append(
+            {"question": q_raw, "answer": ans, "context": ctx, "metrics": mets, "prompt_mode_used": st.session_state.prompt_mode}
+        )
+        st.rerun()
+
+# ---------------- Evaluation -------------------------------
+with tab_eval:
     if not st.session_state.chat_history:
-        st.info("Ask questions in the 'Ask AI' tab to see the evaluation here.")
+        st.info("Ask questions in the Ask AI tab to see the evaluation here.")
     else:
-        eval_data = [c for c in st.session_state.chat_history if c.get("metrics", {}).get("f1", 0) > 0]
+        eval_data = [c for c in st.session_state.chat_history if isinstance(c.get("metrics"), dict)]
         if not eval_data:
             st.warning("No questions with available ground truth have been asked yet.")
         else:
-            from statistics import mean
-            def compute_overall_metrics(chat_list):
-                keys = ['f1', 'precision', 'recall', 'cosine', 'f1_llm_combined', 'rougeL']
-                scores = {k: [] for k in keys}
-                for c in chat_list:
-                    if c.get('metrics'):
-                        for k in keys:
-                            v = c['metrics'].get(k)
-                            if v and v > 0: scores[k].append(v)
-                return {k: round(mean(v), 3) if v else 0.0 for k, v in scores.items()}
+            keys = ["f1", "precision", "recall", "cosine", "f1_llm_combined", "rougeL"]
+            agg = {}
+            for k in keys:
+                vals = []
+                for c in eval_data:
+                    try: vals.append(float(c["metrics"].get(k, 0.0)))
+                    except Exception: vals.append(0.0)
+                agg[k] = round(stats.mean(vals), 3) if vals else 0.0
 
-            overall_metrics = compute_overall_metrics(eval_data)
-
-            st.markdown("### 📊 Overall Performance")
-            col1, col2, col3 = st.columns(3)
-            col4, col5, col6 = st.columns(3)
-            
-            with col1: st.metric("**F1 Score**", f"{overall_metrics['f1']:.3f}")
-            with col2: st.metric("**Precision**", f"{overall_metrics['precision']:.3f}")
-            with col3: st.metric("**Recall**", f"{overall_metrics['recall']:.3f}")
-            with col4: st.metric("**Cosine Similarity**", f"{overall_metrics['cosine']:.3f}")
-            with col5: st.metric("**LLM + F1**", f"{overall_metrics['f1_llm_combined']:.3f}")
-            with col6: st.metric("**ROUGE-L**", f"{overall_metrics['rougeL']:.3f}")
+            st.markdown("#### Overall Performance")
+            c1, c2, c3 = st.columns(3)
+            d1, d2, d3 = st.columns(3)
+            c1.metric("F1 Score", f"{agg['f1']:.3f}")
+            c2.metric("Precision", f"{agg['precision']:.3f}")
+            c3.metric("Recall", f"{agg['recall']:.3f}")
+            d1.metric("Cosine Similarity", f"{agg['cosine']:.3f}")
+            d2.metric("LLM F1", f"{agg['f1_llm_combined']:.3f}")
+            d3.metric("ROUGE-L", f"{agg['rougeL']:.3f}")
 
             st.markdown("---")
-            st.markdown("### 📈 Performance Visualization")
-            labels = {
-                'f1': 'F1', 'precision': 'Precision', 'recall': 'Recall',
-                'cosine': 'Cosine', 'f1_llm_combined': 'LLM+F1', 'rougeL': 'ROUGE-L'
-            }
-            bar_df = pd.DataFrame({
-                'Metric': [labels[k] for k in overall_metrics.keys()],
-                'Score': list(overall_metrics.values())
-            })
-            st.bar_chart(bar_df.set_index('Metric'))
+            st.markdown("#### Performance Visualization")
+            bar_df = pd.DataFrame(
+                {"Metric": ["F1", "Precision", "Recall", "Cosine", "LLM+F1", "ROUGE-L"],
+                 "Score": [agg['f1'], agg['precision'], agg['recall'], agg['cosine'], agg['f1_llm_combined'], agg['rougeL']]}
+            )
+            st.bar_chart(bar_df.set_index("Metric"))
 
-            with st.expander("📖 View Ground Truth References"):
-                import json
+            st.markdown("#### View Ground Truth References")
+            gt_path = asset_path("evaluation", "queries.json")
+            if os.path.exists(gt_path):
                 try:
-                    queries_path = os.path.join(BASE_DIR, "evaluation", "queries.json")
-                    with open(queries_path, 'r', encoding='utf-8') as f:
-                        ground_truth = json.load(f)
-                    st.json(ground_truth[:5])
-                except:
-                    st.error("Could not load ground truth file")
+                    with open(gt_path, "r", encoding="utf-8") as f:
+                        gt = json.load(f)
+                    for i, item in enumerate(gt[:10]):  # only first 10
+                        q = item.get("question") or item.get("query") or ""
+                        a = item.get("answer") or item.get("ground_truth") or ""
+                        with st.expander(f"Q{i+1}: {q[:80]}"):
+                            st.markdown("**Question**"); st.write(q)
+                            st.markdown("**Answer**"); st.write(a)
+                except Exception as e:
+                    st.error(f"Could not parse ground truth file: {e}")
+            else:
+                st.caption("evaluation/queries.json not found (optional).")
 
-            if st.button("💾 Download Evaluation Results"):
-                df = pd.DataFrame([{
-                    "Question": c["question"],
-                    "Prompt Mode": c.get("prompt_mode_used", "N/A"),
-                    **c["metrics"]
-                } for c in eval_data])
-                csv = df.to_csv(index=False).encode()
-                st.download_button("Download CSV", csv, "evaluation_results.csv", "text/csv")
-
-            st.markdown(f"**Total Questions Evaluated:** {len(eval_data)}")
+            if st.button("Download Evaluation Results"):
+                df = pd.DataFrame(
+                    [{"Question": c["question"], "Prompt Mode": c.get("prompt_mode_used", "N/A"), **(c.get("metrics") or {})} for c in eval_data]
+                )
+                st.download_button("Download CSV", df.to_csv(index=False).encode(), "evaluation_results.csv", "text/csv")
+            st.caption(f"Total Questions Evaluated: {len(eval_data)}")
