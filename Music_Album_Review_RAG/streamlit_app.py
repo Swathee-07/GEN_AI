@@ -80,79 +80,86 @@ def asset_path(*parts): return os.path.join(BASE_DIR, *parts)
 if "db" not in st.session_state:
     st.session_state.db = initialize_db()
 
-# ---------------- Utilities (MOVED TO TOP) -------------------
+# ---------------- Utilities -------------------
 def normalize_question(q: str) -> str:
-    """Normalize question text for consistent matching"""
     if not q: return ""
     q = q.strip().lower()
     q = q.replace("'", "'").replace(""", '"').replace(""", '"')
     q = " ".join(q.split())
     return q
 
-def safe_load_json(file_path: str):
-    """Safely load JSON file with error handling"""
+def load_ground_truth_fresh():
+    """Load ground truth data fresh each time (no caching for dynamic updates)"""
     try:
-        if not os.path.exists(file_path):
-            return None
-        with open(file_path, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except Exception as e:
-        st.error(f"Error reading {file_path}: {str(e)}")
-        return None
-
-def create_ground_truth_mapping(data_list):
-    """Create a mapping from questions to answers"""
-    mapping = {}
-    if not data_list:
-        return mapping
-    
-    for item in data_list:
-        if not isinstance(item, dict):
-            continue
+        # Try the most common path first
+        gt_path = asset_path("evaluation", "queries.json")
+        
+        if not os.path.exists(gt_path):
+            # Try alternative paths
+            alt_paths = [
+                asset_path("queries.json"),
+                "evaluation/queries.json", 
+                "queries.json"
+            ]
+            gt_path = None
+            for path in alt_paths:
+                if os.path.exists(path):
+                    gt_path = path
+                    break
+        
+        if not gt_path or not os.path.exists(gt_path):
+            return {}, [], "Ground truth file 'queries.json' not found in evaluation/ directory"
             
-        # Try different key combinations
-        question = item.get("question") or item.get("query") or item.get("q", "")
-        answer = item.get("answer") or item.get("ground_truth") or item.get("a", "")
+        # Read the file
+        with open(gt_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
         
-        if question and answer:
-            normalized_q = normalize_question(question)
-            mapping[normalized_q] = {
-                "original_question": question,
-                "expected_answer": answer
-            }
-    
-    return mapping
-
-# ---------------- Ground Truth Loading (IMPROVED) ----------------
-@st.cache_data
-def load_ground_truth_data():
-    """Load and cache ground truth data"""
-    try:
-        # Try multiple possible paths
-        possible_paths = [
-            asset_path("evaluation", "queries.json"),
-            asset_path("queries.json"),
-            "evaluation/queries.json",
-            "queries.json"
-        ]
+        if not data:
+            return {}, [], "Ground truth file is empty"
+            
+        # Create mapping from questions to answers
+        mapping = {}
+        valid_items = []
         
-        for path in possible_paths:
-            data = safe_load_json(path)
-            if data:
-                mapping = create_ground_truth_mapping(data)
-                return mapping, data, None  # mapping, raw_data, error
+        for item in data:
+            if not isinstance(item, dict):
+                continue
+                
+            # Get question and answer with flexible key names
+            question = item.get("question") or item.get("query") or item.get("q", "")
+            answer = item.get("answer") or item.get("ground_truth") or item.get("a", "") or item.get("expected_answer", "")
+            
+            if question and answer:
+                normalized_q = normalize_question(question)
+                mapping[normalized_q] = {
+                    "original_question": question,
+                    "expected_answer": answer,
+                    "raw_item": item
+                }
+                valid_items.append(item)
         
-        return {}, [], "No ground truth file found in expected locations"
+        if not mapping:
+            return {}, data, f"No valid question-answer pairs found in {gt_path}"
+            
+        return mapping, valid_items, None
+        
+    except json.JSONDecodeError as e:
+        return {}, [], f"Invalid JSON format in queries.json: {str(e)}"
     except Exception as e:
         return {}, [], f"Error loading ground truth: {str(e)}"
 
-# Initialize ground truth data
-if "ground_truth_loaded" not in st.session_state:
-    gt_mapping, gt_raw, gt_error = load_ground_truth_data()
+# ---------------- Load Ground Truth (NO CACHE) ----------------
+def refresh_ground_truth():
+    """Refresh ground truth data"""
+    gt_mapping, gt_raw, gt_error = load_ground_truth_fresh()
     st.session_state.ground_truth_mapping = gt_mapping
     st.session_state.ground_truth_raw = gt_raw
     st.session_state.ground_truth_error = gt_error
-    st.session_state.ground_truth_loaded = True
+    return len(gt_mapping)
+
+# Load ground truth on first run or refresh
+if "ground_truth_mapping" not in st.session_state:
+    refresh_ground_truth()
 
 def find_ground_truth_answer(question: str):
     """Find expected answer for a question"""
@@ -161,74 +168,58 @@ def find_ground_truth_answer(question: str):
     
     normalized_q = normalize_question(question)
     
-    # Direct match
+    # Exact match first
     if normalized_q in st.session_state.ground_truth_mapping:
         return st.session_state.ground_truth_mapping[normalized_q]["expected_answer"]
     
-    # Fuzzy matching
+    # Fuzzy matching for similar questions
     question_words = set(normalized_q.split())
     best_match = None
     best_score = 0
     
     for gt_q, gt_data in st.session_state.ground_truth_mapping.items():
         gt_words = set(gt_q.split())
+        if not gt_words:
+            continue
+            
         overlap = len(question_words.intersection(gt_words))
         total_words = len(question_words.union(gt_words))
         
         if total_words > 0:
             score = overlap / total_words
-            if score > best_score and score > 0.5:  # 50% similarity threshold
+            if score > best_score and score > 0.6:  # 60% similarity required
                 best_score = score
                 best_match = gt_data["expected_answer"]
     
     return best_match
 
 def compute_metrics_with_fallback(q_raw: str, ans: str):
-    """Enhanced metrics computation with proper error handling"""
-    def safe_metrics(q, a, expected=None):
+    def safe_metrics(q, a):
         try:
-            # Try to compute metrics
-            if expected:
-                # If we have expected answer, try to use it
-                try:
-                    m = all_metrics(q, a) or {}
-                except:
-                    m = {}
-            else:
-                m = all_metrics(q, a) or {}
+            m = all_metrics(q, a) or {}
         except Exception:
             m = {}
-        
-        # Ensure all required metrics exist
         out = {}
-        for k in ["f1", "precision", "recall", "cosine", "f1_llm_combined", "rougeL"]:
-            try: 
-                out[k] = float(m.get(k, 0.0))
-            except: 
-                out[k] = 0.0
+        for k in ["f1","precision","recall","cosine","f1_llm_combined","rougeL"]:
+            try: out[k] = float(m.get(k, 0.0))
+            except Exception: out[k] = 0.0
         return out
 
-    # Check if we have ground truth
+    # Check for ground truth
     expected_answer = find_ground_truth_answer(q_raw)
     has_ground_truth = expected_answer is not None
     
-    # Compute metrics
-    metrics = safe_metrics(q_raw, ans, expected_answer)
-    
-    # If all metrics are zero, try variations
-    if all(v == 0.0 for v in metrics.values()):
-        # Try normalized question
+    m = safe_metrics(q_raw, ans)
+    if all(v == 0.0 for v in m.values()):
         qn = normalize_question(q_raw)
-        metrics2 = safe_metrics(qn, ans)
-        if sum(metrics2.values()) > 0:
-            metrics = metrics2
+        m2 = safe_metrics(qn, ans)
+        if all(v == 0.0 for v in m2.values()):
+            m3 = safe_metrics(qn.rstrip("?"), ans)
+            if sum(m3.values()) > sum(m2.values()):
+                return m3, has_ground_truth
         else:
-            # Try without question mark
-            metrics3 = safe_metrics(qn.rstrip("?"), ans)
-            if sum(metrics3.values()) > 0:
-                metrics = metrics3
-    
-    return metrics, has_ground_truth
+            return m2, has_ground_truth
+    return m, has_ground_truth
 
 # ---------------- Sidebar ---------------------
 def sidebar_body():
@@ -239,16 +230,24 @@ def sidebar_body():
 
     st.markdown("#### Sample Questions")
     
-    # Use ground truth questions if available, otherwise use defaults
-    if st.session_state.ground_truth_raw:
+    # Always use fresh ground truth questions
+    if st.session_state.ground_truth_raw and len(st.session_state.ground_truth_raw) > 0:
         samples = []
-        for item in st.session_state.ground_truth_raw[:4]:
+        for item in st.session_state.ground_truth_raw[:4]:  # Show first 4 questions
             if isinstance(item, dict):
-                q = item.get("question") or item.get("query") or ""
+                q = item.get("question") or item.get("query") or item.get("q", "")
                 if q:
-                    # Truncate long questions
-                    display_q = q[:70] + "..." if len(q) > 70 else q
-                    samples.append(q)  # Store full question
+                    samples.append(q)
+        
+        # If we don't have enough from ground truth, add defaults
+        if len(samples) < 4:
+            defaults = [
+                "When was the album Happier Than Ever by Billie Eilish released?",
+                "What major British award did the song win in 2012?", 
+                "When was the song 'Hello' by Adele released?",
+                "What musical styles does 'Dynamite' incorporate?",
+            ]
+            samples.extend(defaults[len(samples):])
     else:
         samples = [
             "When was the album Happier Than Ever by Billie Eilish released?",
@@ -258,7 +257,7 @@ def sidebar_body():
         ]
     
     for i, q in enumerate(samples):
-        display_q = q[:70] + "..." if len(q) > 70 else q
+        display_q = q[:65] + "..." if len(q) > 65 else q
         if st.button(display_q, key=f"sample_{i}", use_container_width=True):
             st.session_state.user_input = q
 
@@ -271,31 +270,33 @@ def sidebar_body():
         key="prompt_selector",
     )
     if mode != st.session_state.prompt_mode:
-        st.session_state.prompt_mode = mode
-        st.rerun()
+        st.session_state.prompt_mode = mode; st.rerun()
 
     theme_choice = st.radio("Theme", ["dark", "light"], index=0 if st.session_state.theme=="dark" else 1, horizontal=True)
     if theme_choice != st.session_state.theme:
-        st.session_state.theme = theme_choice
-        st.rerun()
+        st.session_state.theme = theme_choice; st.rerun()
 
     st.divider()
     if st.session_state.chat_history:
         st.markdown("#### Chat History")
         if st.button("Clear History", use_container_width=True):
-            st.session_state.chat_history = []
-            st.rerun()
-
-    # Ground Truth Status
+            st.session_state.chat_history = []; st.rerun()
+    
+    # Ground truth refresh button
     st.divider()
-    st.markdown("#### Ground Truth Status")
+    st.markdown("#### Ground Truth")
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("🔄 Refresh", help="Reload queries.json"):
+            count = refresh_ground_truth()
+            st.success(f"Loaded {count} questions")
+            st.rerun()
+    with col2:
+        gt_count = len(st.session_state.ground_truth_mapping)
+        st.metric("Questions", gt_count)
+    
     if st.session_state.ground_truth_error:
         st.error(f"⚠️ {st.session_state.ground_truth_error}")
-    else:
-        gt_count = len(st.session_state.ground_truth_mapping)
-        eval_count = sum(1 for c in st.session_state.chat_history if c.get("has_ground_truth", False))
-        st.success(f"✅ {gt_count} questions loaded")
-        st.info(f"📊 {eval_count} evaluated with GT")
 
 with st.sidebar:
     st.markdown(
@@ -339,10 +340,6 @@ with tab_ask:
     st.info(f"Currently using: {st.session_state.prompt_mode}")
     st.markdown("</div>", unsafe_allow_html=True)
 
-    # Display ground truth error if exists
-    if st.session_state.ground_truth_error:
-        st.warning(f"⚠️ Ground Truth Issue: {st.session_state.ground_truth_error}")
-
     # History in a fixed-height scrollable area; centered
     st.markdown("<div class='centered'>", unsafe_allow_html=True)
     st.markdown("<div class='scrollable-chat'>", unsafe_allow_html=True)
@@ -372,8 +369,7 @@ with tab_ask:
     if st.session_state.user_input:
         q_raw = st.session_state.user_input
         st.session_state.user_input = ""
-        with st.chat_message("user"):
-            st.write(q_raw)
+        with st.chat_message("user"): st.write(q_raw)
         with st.chat_message("assistant"):
             with st.spinner("Thinking..."):
                 try:
@@ -381,38 +377,32 @@ with tab_ask:
                 except Exception as e:
                     st.error(f"Inference failed. If this shows 401, configure API secrets. Error: {e}")
                     ans, ctx = ("Sorry, the model could not answer due to a configuration error.", [])
-                
-                # Compute metrics
                 mets, has_gt = compute_metrics_with_fallback(q_raw, ans)
-                
                 st.markdown(f"<div class='answer-container'>{ans}</div>", unsafe_allow_html=True)
                 if ctx:
                     with st.expander("Show Evidence"):
                         top3 = [str(ev) for ev in (ctx or [])[:3]]
                         preview = "\n\n".join(ev[:200] + "..." if len(ev) > 200 else ev for ev in top3) if top3 else "No evidence available."
                         st.info(preview)
-        
-        # Add to chat history
-        st.session_state.chat_history.append({
-            "question": q_raw, 
-            "answer": ans, 
-            "context": ctx, 
-            "metrics": mets,
-            "prompt_mode_used": st.session_state.prompt_mode,
-            "has_ground_truth": has_gt
-        })
+        st.session_state.chat_history.append(
+            {"question": q_raw, "answer": ans, "context": ctx, "metrics": mets, "prompt_mode_used": st.session_state.prompt_mode, "has_ground_truth": has_gt}
+        )
         st.rerun()
 
-# ---------------- Evaluation Dashboard ---------------
+# ---------------- Evaluation -------------------------------
 with tab_eval:
+    # Auto-refresh ground truth data when viewing evaluation tab
+    current_gt_count = len(st.session_state.ground_truth_mapping)
+    fresh_count = refresh_ground_truth()
+    if fresh_count != current_gt_count:
+        st.rerun()
+        
     if not st.session_state.chat_history:
         st.info("Ask questions in the Ask AI tab to see the evaluation here.")
-        
-        # Show ground truth status even without chat history
         if st.session_state.ground_truth_error:
             st.error(f"❌ {st.session_state.ground_truth_error}")
-        elif st.session_state.ground_truth_mapping:
-            st.success(f"✅ {len(st.session_state.ground_truth_mapping)} ground truth questions available")
+        else:
+            st.success(f"✅ {len(st.session_state.ground_truth_mapping)} ground truth questions loaded")
     else:
         eval_data = [c for c in st.session_state.chat_history if isinstance(c.get("metrics"), dict)]
         if not eval_data:
@@ -420,32 +410,14 @@ with tab_eval:
         else:
             keys = ["f1", "precision", "recall", "cosine", "f1_llm_combined", "rougeL"]
             agg = {}
-            
-            # Calculate aggregate metrics
             for k in keys:
                 vals = []
                 for c in eval_data:
-                    try: 
-                        val = float(c["metrics"].get(k, 0.0))
-                        if val > 0:  # Only count non-zero values
-                            vals.append(val)
-                    except Exception: 
-                        continue
+                    try: vals.append(float(c["metrics"].get(k, 0.0)))
+                    except Exception: vals.append(0.0)
                 agg[k] = round(stats.mean(vals), 3) if vals else 0.0
 
             st.markdown("#### Overall Performance")
-            
-            # Show statistics
-            col1, col2, col3 = st.columns(3)
-            with col1:
-                st.metric("Total Questions Asked", len(st.session_state.chat_history))
-            with col2:
-                st.metric("Questions Evaluated", len(eval_data))
-            with col3:
-                gt_eval = sum(1 for c in eval_data if c.get("has_ground_truth", False))
-                st.metric("Ground Truth Matches", gt_eval)
-            
-            # Performance metrics
             c1, c2, c3 = st.columns(3)
             d1, d2, d3 = st.columns(3)
             c1.metric("F1 Score", f"{agg['f1']:.3f}")
@@ -465,30 +437,20 @@ with tab_eval:
 
             st.markdown("#### View Ground Truth References")
             if st.session_state.ground_truth_raw:
-                for i, item in enumerate(st.session_state.ground_truth_raw[:10]):
+                for i, item in enumerate(st.session_state.ground_truth_raw[:10]):  # only first 10
                     if isinstance(item, dict):
                         q = item.get("question") or item.get("query") or ""
                         a = item.get("answer") or item.get("ground_truth") or ""
                         if q and a:
-                            with st.expander(f"Q{i+1}: {q[:80]}{'...' if len(q) > 80 else ''}"):
-                                st.markdown("*Question*")
-                                st.write(q)
-                                st.markdown("*Answer*")
-                                st.write(a)
+                            with st.expander(f"Q{i+1}: {q[:80]}"):
+                                st.markdown("*Question*"); st.write(q)
+                                st.markdown("*Answer*"); st.write(a)
             else:
-                if st.session_state.ground_truth_error:
-                    st.error(st.session_state.ground_truth_error)
-                else:
-                    st.caption("No ground truth data available.")
+                st.caption("evaluation/queries.json not found (optional).")
 
             if st.button("Download Evaluation Results"):
-                df = pd.DataFrame([
-                    {
-                        "Question": c["question"], 
-                        "Prompt Mode": c.get("prompt_mode_used", "N/A"),
-                        "Has_Ground_Truth": c.get("has_ground_truth", False),
-                        **c.get("metrics", {})
-                    } for c in eval_data
-                ])
+                df = pd.DataFrame(
+                    [{"Question": c["question"], "Prompt Mode": c.get("prompt_mode_used", "N/A"), **c.get("metrics", {})} for c in eval_data]
+                )
                 st.download_button("Download CSV", df.to_csv(index=False).encode(), "evaluation_results.csv", "text/csv")
             st.caption(f"Total Questions Evaluated: {len(eval_data)}")
